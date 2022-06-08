@@ -1,0 +1,29 @@
+snippet test "A test case"
+it "$1" do
+  $0
+end
+endsnippet
+
+snippet context "The context of some seperated test cases"
+context "$1" do
+  $0
+end
+endsnippet
+
+snippet expectsuccess "Expects a succes status code"
+expect(response).to have_http_status(:success)
+endsnippet
+
+snippet expectforbidden "Expects a forbidden status code"
+expect(response).to have_http_status(:forbidden)
+endsnippet
+
+snippet expectunprocessable "Expects a unprocessable_entity status code"
+expect(response).to have_http_status(:unprocessable_entity)
+endsnippet
+
+snippet showif "Show_if for crispies serializers"
+show_if -> (_model, options) { options[:$1] } do
+  $0
+end
+endsnippet

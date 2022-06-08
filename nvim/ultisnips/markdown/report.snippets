@@ -1,0 +1,73 @@
+snippet risk-management-report "Generate risk management report"
+---
+created_at: `date +%d/%m/%Y`
+author: ${1:Yannick Vandewalle,Yannick Maes,Wouter Willaert,Wim Mortier,Tiziano Plaiy,Tomas Vancoillie,Simon Dusauchoit,Sander Deryckere,Pieter Vercruyce,Pieter Callewaert,Pascal Van Vlaenderen,Nick Vandevenne,Kristof Dobbels,Jonatan Michiels,Jasper Van Gestel,ir. Ayrton Vercruysse,ing. Karl-Erik Réculé,Gerrit Bertier,Florian Dejonckheere,Elke Michiels,Elisa Canzani,Davy Tielens,Bastiaan Andriessen,Arne Wauters,Anastasiya Rybina,Aaron Hallaert}
+type: report
+product: ${2:id,suite,ktv-module,ufv-module}
+releases:
+- ${3}
+---
+
+# Risk Management Report
+
+The Risk Management Report contains the output and summary of risk management activities. The general planning and methods are described in the Risk Management plan, while the actual risks are listed and analyzed in the Risk Table.
+
+The process and stages of risk analysis are described in the SOP - New Software Product, SOP - Release and SOP Integrated Software Development.
+
+## Mapping of Standard Requirements to Document Sections
+
+| ISO 14971:2019 Section                | Document Section             |
+| ------------------------------------- | ---------------------------- |
+| 4.5 Risk management file              | (all)                        |
+| 7.4 Benefit-risk analysis             | 6                            |
+| 7.6 Completeness of risk control      | (by review of this document) |
+| 8 Evaluation of overall residual risk | 3, 5                         |
+| 9 Risk management review              | (all)                        |
+
+## Relevant Processes and Documents
+
+- SOP - New Software Product
+- SOP - Release
+- SOP - Integrated Software Development
+- ${4|Nephroflow Suite, Nephroflow ID, Kt/V Module, UFV Module|} - Risk Management Plan
+- ${4|Nephroflow Suite, Nephroflow ID, Kt/V Module, UFV Module|} - Risk Acceptance Matrix
+- ${4|Nephroflow Suite, Nephroflow ID, Kt/V Module, UFV Module|} - Risk Table
+
+## Risk Analysis
+
+Limited risk is present in the ${4|Nephroflow Suite, Nephroflow ID, Kt/V Module, UFV Module|} given its small scope. The main risk is miscalculation of the Kt/V value according to the different formulas. Primary risk control is automated testing.
+
+### Preliminary Hazards Analysis
+
+${5:0} hazard(s) was identified based on the Intended Use. It was further analyzed in the Risk Table.
+
+### Failure Modes
+
+${6:0} possible failure mode(s) of software was identified. It was further analyzed in the Risk Table.
+
+## Risk Control Measures
+
+::risk_control_measures
+
+## Risk Matrix
+
+### Inherint Risk Matrix
+
+**Before** implementation and verification of all Risk Control Measures, the count of risks in the Risk Acceptance Matrix was as follows:
+
+::inherint_risk_matrix
+
+### Residual Risk Matrix
+
+**After** implementation and verification of all Risk Control Measures, the count of risks in the Risk Acceptance Matrix was as follows:
+
+::residual_risk_matrix
+
+## Summary of Risks and Unacceptable Risks
+
+${7:TODO}
+
+## Overall Residual Risk
+
+${8:TODO}
+endsnippet
