@@ -6,12 +6,17 @@ email = tiziano.plaiy@gmail.com
 [alias]
   aa = add --all
   co = checkout
-  cp = cherry-pick
+  cob = checkout -b
   pf = push --force
   ca = commit --amend
+
   ri = rebase -i
   rc = rebase --continue
   ra = rebase --abort
+
+  cp = cherry-pick
+  cpa = cherry-pick --abort
+  cpc = cherry-pick --continue
 
   cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
 

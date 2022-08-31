@@ -1,38 +1,40 @@
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
+
 vim.cmd('packadd packer.nvim')
 
 return require('packer').startup(
-  function()
+  function(use)
+    -- Package manager (lua)
+    use 'wbthomason/packer.nvim'
+
     -- LSP & related plugins
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
     use 'windwp/nvim-autopairs'
 
     -- themes
     use 'tamton-aquib/staline.nvim'
     use 'tanvirtin/monokai.nvim'
-    use 'nxvu699134/vn-night.nvim'
+    use 'navarasu/onedark.nvim'
+    use 'JoosepAlviste/palenightfall.nvim'
+    use 'Shatur/neovim-ayu'
 
     -- Dashboard
     use {
       'goolord/alpha-nvim',
       requires = { 'kyazdani42/nvim-web-devicons' },
-      config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
-      end
-    }
-
-    -- Zen mode
-    use {
-      "folke/zen-mode.nvim",
-      config = function()
-        require("zen-mode").setup({
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        })
-      end
+      -- config = function ()
+      --   require'alpha'.setup(require'alpha.themes.startify'.config)
+      -- end
     }
 
     -- Git related
@@ -41,18 +43,8 @@ return require('packer').startup(
       requires = {
         'nvim-lua/plenary.nvim'
       },
-      config = require('gitsigns').setup()
-    }
-
-    use {
-      'pwntester/octo.nvim',
-      requires = {
-        'nvim-lua/plenary.nvim',
-        'nvim-telescope/telescope.nvim',
-        'kyazdani42/nvim-web-devicons',
-      },
       config = function ()
-        require"octo".setup()
+        require('gitsigns').setup()
       end
     }
 
@@ -62,22 +54,28 @@ return require('packer').startup(
     -- highlighting
     use 'nvim-treesitter/nvim-treesitter'
 
-    -- Package manager (lua)
-    use 'wbthomason/packer.nvim'
-
     -- file-navigation
+    use 'ThePrimeagen/harpoon'
     use {
       'kyazdani42/nvim-tree.lua',
       requires = {
         'kyazdani42/nvim-web-devicons', -- optional, for file icon
       },
-      config = require('nvim-tree-conf')
+      config = function ()
+        require('nvim-tree-conf')
+      end
     }
-    use 'mkitt/tabline.vim'
+
+    use {
+      'akinsho/bufferline.nvim',
+      tag = "v2.*",
+      requires = 'kyazdani42/nvim-web-devicons'
+    }
     use {
       'nvim-telescope/telescope.nvim',
       requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
     }
+    use 'phaazon/hop.nvim'
 
     -- replacing
     use 'tpope/vim-abolish'
@@ -89,7 +87,7 @@ return require('packer').startup(
     use 'ervandew/supertab'
 
     -- comments
-    use 'kkoomen/vim-doge'
+    -- use 'kkoomen/vim-doge'
     use 'tpope/vim-commentary'
 
     -- general plugins
@@ -112,5 +110,8 @@ return require('packer').startup(
 
     -- markdown
     use 'davidgranstrom/nvim-markdown-preview'
+
+    -- rust
+    use 'simrat39/rust-tools.nvim'
   end
   )

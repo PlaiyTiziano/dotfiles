@@ -1,0 +1,16 @@
+snippet jsonschema "A JSON schema for schema validation"
+{
+  "type": "$1",
+  "required": [$2],
+  "properties": {$0},
+  "additionalProperties": false
+}
+endsnippet
+
+snippet jsonreference "A JSON schema reference for validation"
+"$1": { "$ref": "$0" }
+endsnippet
+
+snippet jsonproperty "A JSON schema property"
+"$1": { "type": "$0" }
+endsnippet
