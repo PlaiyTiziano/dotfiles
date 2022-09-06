@@ -65,7 +65,6 @@ return require('packer').startup(
         require('nvim-tree-conf')
       end
     }
-
     use {
       'akinsho/bufferline.nvim',
       tag = "v2.*",
@@ -100,6 +99,8 @@ return require('packer').startup(
         require("trouble").setup{}
       end
     }
+
+    use 'voldikss/vim-floaterm'
 
     -- language specific plugins
     -- go

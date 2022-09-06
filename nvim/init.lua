@@ -34,9 +34,10 @@ map("n", "<S-j>", ":split<CR>", options)
 map("n", "<S-l>", ":vs<CR>", options)
 
 -- BufferLine keybinds
+map("n", "<leader>bd", ":bd<CR>", options)
 map("n", "<Tab>", ":BufferLineCycleNext<CR>", options)
 map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", options)
-map("n", "<leader>blp", ":BufferLineCyclePick<CR>", options)
+map("n", "<leader>blp", ":BufferLinePick<CR>", options)
 
 -- Make split navigation easier.
 map("n", "<C-H>", "<C-W><C-H>", options)
