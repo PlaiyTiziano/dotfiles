@@ -9,6 +9,8 @@ require('statusline')
 require('telescope-config')
 require('harpoon-config')
 
+require('autosave')
+
 -- LSP's
 require('nvim-lsp')
 

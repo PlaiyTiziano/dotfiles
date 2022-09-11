@@ -16,15 +16,15 @@ function _G.Get_test_cmd( --[[optional]] line)
   local line_number = vim.api.nvim_win_get_cursor(0)[1]
 
   if line then
-    return "bundle exec rspec " .. test_file .. ":" .. line_number
+    return "bundle exec spring rspec " .. test_file .. ":" .. line_number
   else
-    return "bundle exec rspec " .. test_file .. " --no-fail-fast"
+    return "bundle exec spring rspec " .. test_file .. " --no-fail-fast"
   end
 
 end
 
 function _G.Connect_to_nipro_web_container(test_cmd)
-  return 'docker exec -it nephroflow_web\t' .. test_cmd
+  return 'docker exec -it nephroflow_web\t ' .. test_cmd
 end
 
 function _G.Send_cmd(term_id, cmd)
