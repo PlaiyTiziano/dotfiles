@@ -9,7 +9,7 @@ require('statusline')
 require('telescope-config')
 require('harpoon-config')
 
-require('autosave')
+require('continuous-testing')
 
 -- LSP's
 require('nvim-lsp')
