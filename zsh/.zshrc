@@ -9,6 +9,7 @@ plugins=(
   docker
 )
 
+source ~/dotfiles/zsh/.env
 source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -30,18 +31,10 @@ alias cat="bat"
 alias v="nvim ."
 alias mux="tmuxinator"
 
-
 # Linting aliases (Requires: git)
 # alias lint-rubocop="$(bundle exec rubocop -A $(git diff --name-only --diff-filter=AM | grep "\.rb$"))"
 
 #Github aliases
-alias gs="git status"
-alias ga="git add ."
-alias gp="git push"
-alias gmt="git commit"
-alias gc="git checkout"
-alias gcn="git checkout -b"
-alias gcl="git clone"
 alias gd="git status -s \
  | fzf --no-sort --reverse \
  --preview 'git diff --color=always {+2} | diff-so-fancy' \
@@ -64,8 +57,8 @@ export EDITOR="$VISUAL"
 # Brew
 eval $(/opt/homebrew/bin/brew shellenv)
 
-export BUNDLER_USERNAME="PlaiyTiziano"
-export BUNDLER_TOKEN="<SECRET_TOKEN>"
+export BUNDLER_USERNAME=$GITHUB_USERNAME
+export BUNDLER_TOKEN=$GITHUB_ACCESS_TOKEN
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 

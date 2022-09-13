@@ -1,7 +1,7 @@
 local TEST_STATES = {
   SUCCESS = "passed",
   FAILED = "failed",
-  SKIPPED = "skipped",
+  SKIPPED = "pending",
 }
 
 local state = {}
@@ -43,7 +43,7 @@ local buf_write_post_callback = function (bufnr, cmd)
     bufnr = bufnr,
     version = nil,
     seed = nil,
-    tests = {}
+    tests = {},
   }
 
   return function ()
@@ -78,6 +78,7 @@ local buf_write_post_callback = function (bufnr, cmd)
           else
             text = { "❓" }
           end
+
 
           vim.api.nvim_buf_set_extmark(state.bufnr, ns, test.line_number - 1, 0, {
             virt_text = { text },
@@ -136,7 +137,7 @@ local attach_autocmd_to_buffer = function (bufnr, pattern, cmd)
   vim.api.nvim_create_user_command("StopContinuousRubyTesting", function ()
     vim.api.nvim_del_autocmd(autocmd)
     vim.api.nvim_del_user_command("StopContinuousRubyTesting")
-    vim.api.nvim_buf_del_user_command(bufnr, "AutoTestLineDialog")
+    vim.api.nvim_buf_del_user_command(bufnr, "ContinuousRubyTestingDialog")
     vim.api.nvim_buf_clear_namespace(state.bufnr, ns, 0, -1)
   end, {})
 
@@ -155,6 +156,13 @@ local get_test_cmd = function(file)
     "--no-fail-fast",
   }
 end
+
+vim.api.nvim_create_user_command("Testingsomething", function ()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local filename = vim.fn.expand("%")
+
+  attach_autocmd_to_buffer(bufnr, "*.rb", get_test_cmd(filename))
+end, {})
 
 vim.api.nvim_create_user_command("ContinuousRubyTesting", function ()
   local bufnr = vim.api.nvim_get_current_buf()
