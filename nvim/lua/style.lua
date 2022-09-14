@@ -8,3 +8,7 @@ ayu.setup({
   overrides = {},
 })
 ayu.colorscheme()
+
+-- vim.opt.background = 'dark'
+-- vim.cmd('colorscheme tundra')
+-- require("nvim-tundra").setup({})

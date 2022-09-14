@@ -27,6 +27,7 @@ return require('packer').startup(
     use 'navarasu/onedark.nvim'
     use 'JoosepAlviste/palenightfall.nvim'
     use 'Shatur/neovim-ayu'
+    use 'sam4llis/nvim-tundra'
 
     -- Dashboard
     use {

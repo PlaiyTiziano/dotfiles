@@ -106,9 +106,10 @@ local testing_dialog = function ()
   end
 
   local message = {
-    "test: " .. test.description,
-    "location: " .. test.file_path .. ":" .. test.line_number,
-    "run_time: " .. test.run_time,
+    "Test: " .. test.description,
+    "Location: " .. test.file_path .. ":" .. test.line_number,
+    "Runtime: " .. test.run_time,
+    "Seed: " .. state.seed,
     "",
     "Exception: " .. test.exception.class,
     "Message:",
@@ -127,8 +128,28 @@ local testing_dialog = function ()
     end
   end
 
-  vim.api.nvim_command('new')
-  vim.api.nvim_buf_set_lines(vim.api.nvim_get_current_buf(), 0, -1, false, message)
+  local width = vim.api.nvim_get_option("columns")
+  local height = vim.api.nvim_get_option("lines")
+
+  local win_height = math.ceil(height * 0.8 - 4)
+  local win_width = math.ceil(width * 0.8)
+
+  local row = math.ceil((height - win_height) / 2 - 1)
+  local col = math.ceil((width - win_width) / 2)
+
+  local opts = {
+    style = "minimal",
+    relative = "editor",
+    width = win_width,
+    height = win_height,
+    row = row,
+    col = col,
+    border = "rounded",
+  }
+
+  local buffer = vim.api.nvim_create_buf(false, 'nomodified')
+  vim.api.nvim_buf_set_lines(buffer, 0, -1, false, message)
+  vim.api.nvim_open_win(buffer, true, opts)
 end
 
 local attach_autocmd_to_buffer = function (bufnr, pattern, cmd)
@@ -156,13 +177,6 @@ local get_test_cmd = function(file)
     "--no-fail-fast",
   }
 end
-
-vim.api.nvim_create_user_command("Testingsomething", function ()
-  local bufnr = vim.api.nvim_get_current_buf()
-  local filename = vim.fn.expand("%")
-
-  attach_autocmd_to_buffer(bufnr, "*.rb", get_test_cmd(filename))
-end, {})
 
 vim.api.nvim_create_user_command("ContinuousRubyTesting", function ()
   local bufnr = vim.api.nvim_get_current_buf()
