@@ -10,8 +10,17 @@ local autocmd = nil
 local ns = vim.api.nvim_create_namespace("ContinuousRubyTesting")
 local group = vim.api.nvim_create_augroup("ContinuousRubyTesting", { clear = true })
 
+local clear_test_results = function ()
+  vim.diagnostic.reset(ns, state.bufnr)
+  vim.api.nvim_buf_clear_namespace(state.bufnr, ns, 0, -1)
+
+  state.version = nil
+  state.seed = nil
+  state.tests = {}
+  state.diagnostics = {}
+end
+
 local on_exit_callback = function ()
-  local diagnostics = {}
   for _, test in pairs(state.tests) do
     local severity = vim.diagnostic.severity.ERROR
     local message = "Test Failed"
@@ -24,7 +33,7 @@ local on_exit_callback = function ()
       message = "Test Skipped"
     end
 
-    table.insert(diagnostics, {
+    table.insert(state.diagnostics, {
       bufnr = state.bufnr,
       lnum = test.line_number - 1,
       col = 0,
@@ -35,7 +44,7 @@ local on_exit_callback = function ()
     })
   end
 
-  vim.diagnostic.set(ns, state.bufnr, diagnostics, {})
+  vim.diagnostic.set(ns, state.bufnr, state.diagnostics, {})
 end
 
 local buf_write_post_callback = function (bufnr, cmd)
@@ -44,11 +53,11 @@ local buf_write_post_callback = function (bufnr, cmd)
     version = nil,
     seed = nil,
     tests = {},
+    diagnostics = {},
   }
 
   return function ()
-    vim.diagnostic.reset(ns, bufnr)
-    vim.api.nvim_buf_clear_namespace(state.bufnr, ns, 0, -1)
+    clear_test_results()
 
     local append_data = function(_, data)
       if not data then
@@ -159,7 +168,7 @@ local attach_autocmd_to_buffer = function (bufnr, pattern, cmd)
     vim.api.nvim_del_autocmd(autocmd)
     vim.api.nvim_del_user_command("StopContinuousRubyTesting")
     vim.api.nvim_buf_del_user_command(bufnr, "ContinuousRubyTestingDialog")
-    vim.api.nvim_buf_clear_namespace(state.bufnr, ns, 0, -1)
+    clear_test_results()
   end, {})
 
   autocmd = vim.api.nvim_create_autocmd("BufWritePost", {
@@ -168,6 +177,15 @@ local attach_autocmd_to_buffer = function (bufnr, pattern, cmd)
     callback = buf_write_post_callback(bufnr, cmd)
   })
 end
+
+vim.api.nvim_create_user_command("ContinuousRubyTestingFailures", function ()
+  vim.diagnostic.setqflist({
+    ns = ns,
+    open = true,
+    title = "Failed tests:",
+    severity = vim.diagnostic.severity.ERROR
+  })
+end, {})
 
 local get_test_cmd = function(file)
   return {
