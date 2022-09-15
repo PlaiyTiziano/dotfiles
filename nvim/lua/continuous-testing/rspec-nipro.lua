@@ -124,6 +124,8 @@ local testing_dialog = function ()
     "Message:",
   }
 
+  -- Splitting on new lines because the message array cannot contain any when
+  -- setting lines.
   for line in string.gmatch(test.exception.message, "[^\r\n]+") do
     table.insert(message, line)
   end
@@ -164,10 +166,23 @@ end
 local attach_autocmd_to_buffer = function (bufnr, pattern, cmd)
   vim.api.nvim_buf_create_user_command(bufnr, "ContinuousRubyTestingDialog", testing_dialog, {})
 
+  vim.api.nvim_buf_create_user_command(bufnr, "ContinuousRubyTestingFailures", function ()
+    vim.diagnostic.setqflist({
+      ns = ns,
+      open = true,
+      title = "Failed tests:",
+      severity = vim.diagnostic.severity.ERROR
+    })
+  end, {})
+
   vim.api.nvim_create_user_command("StopContinuousRubyTesting", function ()
+    state.active = false
+
     vim.api.nvim_del_autocmd(autocmd)
     vim.api.nvim_del_user_command("StopContinuousRubyTesting")
     vim.api.nvim_buf_del_user_command(bufnr, "ContinuousRubyTestingDialog")
+    vim.api.nvim_buf_del_user_command(bufnr, "ContinuousRubyTestingFailures")
+
     clear_test_results()
   end, {})
 
@@ -176,16 +191,9 @@ local attach_autocmd_to_buffer = function (bufnr, pattern, cmd)
     pattern = pattern,
     callback = buf_write_post_callback(bufnr, cmd)
   })
-end
 
-vim.api.nvim_create_user_command("ContinuousRubyTestingFailures", function ()
-  vim.diagnostic.setqflist({
-    ns = ns,
-    open = true,
-    title = "Failed tests:",
-    severity = vim.diagnostic.severity.ERROR
-  })
-end, {})
+  state.active = true
+end
 
 local get_test_cmd = function(file)
   return {
@@ -197,6 +205,11 @@ local get_test_cmd = function(file)
 end
 
 vim.api.nvim_create_user_command("ContinuousRubyTesting", function ()
+  if state.active then
+    print("Continuous ruby testing is already active..")
+    return
+  end
+
   local bufnr = vim.api.nvim_get_current_buf()
   local filename = vim.fn.expand("%")
 

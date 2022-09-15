@@ -23,8 +23,6 @@ return require('packer').startup(
 
     -- themes
     use 'tamton-aquib/staline.nvim'
-    use 'tanvirtin/monokai.nvim'
-    use 'navarasu/onedark.nvim'
     use 'Shatur/neovim-ayu'
 
     -- Dashboard
@@ -46,12 +44,14 @@ return require('packer').startup(
         require('gitsigns').setup()
       end
     }
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     -- snippets
     use 'SirVer/ultisnips'
 
     -- highlighting
     use 'nvim-treesitter/nvim-treesitter'
+    use 'RRethy/nvim-treesitter-endwise'
 
     -- file-navigation
     use 'ThePrimeagen/harpoon'
