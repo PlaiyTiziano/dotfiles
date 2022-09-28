@@ -20,22 +20,26 @@ vim.wo.relativenumber = true
 vim.wo.wrap = true
 
 vim.o.tabstop = 2
-vim.bo.tabstop = 2
 vim.o.softtabstop = 2
-vim.bo.softtabstop = 2
 vim.o.shiftwidth = 2
-vim.bo.shiftwidth = 2
 vim.o.autoindent = true
-vim.bo.autoindent = true
 vim.o.expandtab = true
-vim.bo.expandtab = true
+vim.o.smartindent = true
 
 vim.g.mapleader = ' '
 vim.b.mapleader = ' '
 
+vim.api.nvim_command("set colorcolumn=80")
+
 vim.cmd('language en_US.utf-8')
+vim.opt.listchars = {
+  tab = "┆·",
+  trail = "·",
+  precedes = "",
+  extends = "",
+}
+
 vim.opt.list = true
-vim.opt.listchars = 'tab:┆·,trail:·,precedes:,extends:'
 
 vim.g.markdown_fenced_languages = {'sh', 'vim'}
 

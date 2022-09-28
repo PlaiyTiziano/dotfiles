@@ -20,6 +20,7 @@ return require('packer').startup(
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'windwp/nvim-autopairs'
+    use 'folke/tokyonight.nvim'
 
     -- themes
     use 'tamton-aquib/staline.nvim'
@@ -44,7 +45,7 @@ return require('packer').startup(
         require('gitsigns').setup()
       end
     }
-    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+    use { 'sindrets/diffview.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
     -- snippets
     use 'SirVer/ultisnips'
@@ -90,6 +91,7 @@ return require('packer').startup(
 
     -- general plugins
     use 'vijaymarupudi/nvim-fzf'
+    use "lukas-reineke/indent-blankline.nvim"
 
     use {
       "folke/trouble.nvim",

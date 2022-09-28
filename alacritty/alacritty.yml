@@ -14,14 +14,14 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-# env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  # TERM: xterm-256color
+  TERM: xterm-256color
 
 #window:
   # Window dimensions (changes require restart)
@@ -232,36 +232,67 @@ font:
 #     - { index: 21, color: '0x959dcb' }
 
 # Colors (Tomorrow Night)
+# colors:
+#   cursor:
+#     text: '0x000000'
+#     cursor: '0xffffff'
+#   # Default colors
+#   primary:
+#     background: '0x2D2A2E'
+#     foreground: '0xfff1f3'
+
+#   # Normal colors
+#   normal:
+#     black:   '0x2c2525'
+#     red:     '0xfd6883'
+#     green:   '0xadda78'
+#     yellow:  '0xf9cc6c'
+#     blue:    '0xf38d70'
+#     magenta: '0xa8a9eb'
+#     cyan:    '0x85dacc'
+#     white:   '0xfff1f3'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x72696a'
+#     red:     '0xfd6883'
+#     green:   '0xadda78'
+#     yellow:  '0xf9cc6c'
+#     blue:    '0xf38d70'
+#     magenta: '0xa8a9eb'
+#     cyan:    '0x85dacc'
+#     white:   '0xfff1f3'
+
+
+# Colors (ayu-mirage)
 colors:
-  cursor:
-    text: '0x000000'
-    cursor: '0xffffff'
   # Default colors
   primary:
-    background: '0x2D2A2E'
-    foreground: '0xfff1f3'
+    background: '#1f2430'
+    foreground: '#cbccc6'
+    bright_foreground: '#f28779'
 
   # Normal colors
   normal:
-    black:   '0x2c2525'
-    red:     '0xfd6883'
-    green:   '0xadda78'
-    yellow:  '0xf9cc6c'
-    blue:    '0xf38d70'
-    magenta: '0xa8a9eb'
-    cyan:    '0x85dacc'
-    white:   '0xfff1f3'
+    black:   '#212733' #
+    red:     '#f08778' #
+    green:   '#53bf97' #
+    yellow:  '#fdcc60' #
+    blue:    '#60b8d6' # 
+    magenta: '#ec7171' #
+    cyan:    '#98e6ca' #
+    white:   '#fafafa' #
 
-  # Bright colors
+  # Brightened
   bright:
-    black:   '0x72696a'
-    red:     '0xfd6883'
-    green:   '0xadda78'
-    yellow:  '0xf9cc6c'
-    blue:    '0xf38d70'
-    magenta: '0xa8a9eb'
-    cyan:    '0x85dacc'
-    white:   '0xfff1f3'
+    black: '#686868'
+    red: '#f58c7d'
+    green: '#58c49c'
+    yellow: '#ffd165'
+    blue: '#65bddb'
+    magenta: '#f17676'
+    cyan: '#9debcf'
+    white: '#ffffff'
 
 #colors:
   # Default colors
@@ -956,3 +987,65 @@ colors:
 
   # Highlight window damage information.
   #highlight_damage: false
+
+# schemes:
+  # Tokyo Night theme, based on both:
+  #   https://github.com/ghifarit53/tokyonight-vim
+  #   https://github.com/enkia/tokyo-night-vscode-theme
+  # tokyo-night: &tokyo-night
+  #   # Default colors
+  #   primary:
+  #     background: '0x1a1b26'
+  #     foreground: '0xa9b1d6'
+
+  #   # Normal colors
+  #   normal:
+  #     black:   '0x32344a'
+  #     red:     '0xf7768e'
+  #     green:   '0x9ece6a'
+  #     yellow:  '0xe0af68'
+  #     blue:    '0x7aa2f7'
+  #     magenta: '0xad8ee6'
+  #     cyan:    '0x449dab'
+  #     white:   '0x787c99'
+
+  #   # Bright colors
+  #   bright:
+  #     black:   '0x444b6a'
+  #     red:     '0xff7a93'
+  #     green:   '0xb9f27c'
+  #     yellow:  '0xff9e64'
+  #     blue:    '0x7da6ff'
+  #     magenta: '0xbb9af7'
+  #     cyan:    '0x0db9d7'
+  #     white:   '0xacb0d0'
+
+  # tokyo-night-storm: &tokyo-night-storm
+  #   # Default colors
+  #   primary:
+  #     background: '0x24283b'
+  #     foreground: '0xa9b1d6'
+
+  #   # Normal colors
+  #   normal:
+  #     black:   '0x32344a'
+  #     red:     '0xf7768e'
+  #     green:   '0x9ece6a'
+  #     yellow:  '0xe0af68'
+  #     blue:    '0x7aa2f7'
+  #     magenta: '0xad8ee6'
+  #     cyan:    '0x449dab'
+  #     white:   '0x9699a8'
+
+  #   # Bright colors
+  #   bright:
+  #     black:   '0x444b6a'
+  #     red:     '0xff7a93'
+  #     green:   '0xb9f27c'
+  #     yellow:  '0xff9e64'
+  #     blue:    '0x7da6ff'
+  #     magenta: '0xbb9af7'
+  #     cyan:    '0x0db9d7'
+  #     white:   '0xacb0d0'
+
+# colors: *tokyo-night

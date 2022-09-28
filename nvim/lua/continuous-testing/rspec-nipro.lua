@@ -133,9 +133,11 @@ local testing_dialog = function ()
   table.insert(message, "")
   table.insert(message, "Backtrace:")
 
-  for _, line in ipairs(test.exception.backtrace) do
-    for backtrace in string.gmatch(line, "[^\r\n]+") do
-      table.insert(message, backtrace)
+  if test.exception.backtrace ~= vim.NIL then
+    for _, line in ipairs(test.exception.backtrace) do
+      for backtrace in string.gmatch(line, "[^\r\n]+") do
+        table.insert(message, backtrace)
+      end
     end
   end
 
@@ -197,7 +199,7 @@ end
 
 local get_test_cmd = function(file)
   return {
-    "docker", "exec", "nephroflow_web_run_a80d11aa125c",
+    "docker", "exec", "nephroflow_web_run_9f375b368169",
     "spring", "rspec", file,
     "--format", "json",
     "--no-fail-fast",

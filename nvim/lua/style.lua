@@ -8,6 +8,7 @@ ayu.setup({
   overrides = {},
 })
 ayu.colorscheme()
+-- vim.cmd[[colorscheme tokyonight-moon]]
 
 -- vim.opt.background = 'dark'
 -- vim.cmd('colorscheme tundra')

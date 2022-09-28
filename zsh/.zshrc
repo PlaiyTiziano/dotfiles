@@ -20,6 +20,7 @@ TERMINAL_CONFIG_FILE="alacritty.yml"
 alias zshconfig="nvim ~/dotfiles/zsh/.zshrc"
 alias nvimconfig="nvim ~/dotfiles/nvim/"
 alias tmuxconfig="nvim ~/dotfiles/tmux/.tmux.conf"
+alias gitconfig="nvim ~/dotfiles/git/.gitconfig"
 alias termconfig="nvim ~/dotfiles/$TERMINAL/$TERMINAL_CONFIG_FILE"
 
 # snippet aliases
@@ -30,6 +31,7 @@ alias rubysnippets="nvim ~/.config/nvim/ultisnips/ruby.snippets"
 alias cat="bat"
 alias v="nvim ."
 alias mux="tmuxinator"
+alias lg="lazygit"
 
 # Linting aliases (Requires: git)
 # alias lint-rubocop="$(bundle exec rubocop -A $(git diff --name-only --diff-filter=AM | grep "\.rb$"))"

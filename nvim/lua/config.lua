@@ -21,6 +21,10 @@ require('hop').setup()
 
 require('bufferline').setup()
 
+-- require('indent_blankline').setup({
+--   show_end_of_line = false
+-- })
+
 -- require('telescope').load_extension('harpoon')
 
 -- require("packer").startup(function(use)
