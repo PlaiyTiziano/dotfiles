@@ -199,10 +199,8 @@ end
 
 local get_test_cmd = function(file)
   return {
-    "docker", "exec", "nephroflow_web_run_9f375b368169",
-    "spring", "rspec", file,
-    "--format", "json",
-    "--no-fail-fast",
+    "execute_api_command",
+    "spring rspec " .. file .. " --format json --no-fail-fast",
   }
 end
 

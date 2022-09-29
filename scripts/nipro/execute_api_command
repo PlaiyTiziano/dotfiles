@@ -1,0 +1,14 @@
+#! /bin/sh
+
+DOCKER_COMPOSE_LOCATION="$HOME/nipro/nephroflow-api"
+CONTAINER_NAME="nephroflow_web"
+COMMAND=$1
+
+CONTAINER_ID="$(docker ps -q -f name=$CONTAINER_NAME -f status=running)"
+
+if [ ! $CONTAINER_ID ]; then
+    cd $DOCKER_COMPOSE_LOCATION
+    docker-compose run --service-ports web $COMMAND
+else
+  docker exec $CONTAINER_ID $COMMAND
+fi

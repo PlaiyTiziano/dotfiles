@@ -98,3 +98,6 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 # Spicetify
 export PATH=$PATH:/Users/plaiytiziano/.spicetify
+
+# Add dotfile scripts to PATH
+export PATH=$PATH:$HOME/dotfiles/scripts/nipro
