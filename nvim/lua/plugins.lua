@@ -46,6 +46,7 @@ return require('packer').startup(
       end
     }
     use { 'sindrets/diffview.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+    use "almo7aya/openingh.nvim"
 
     -- snippets
     use 'SirVer/ultisnips'
@@ -92,6 +93,9 @@ return require('packer').startup(
     -- general plugins
     use 'vijaymarupudi/nvim-fzf'
     use "lukas-reineke/indent-blankline.nvim"
+
+    -- Notifications
+    use 'rcarriga/nvim-notify'
 
     use {
       "folke/trouble.nvim",

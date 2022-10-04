@@ -20,6 +20,28 @@ local clear_test_results = function ()
   state.diagnostics = {}
 end
 
+local notify_failure = function (test)
+  local description = {
+      "Test failed: " ..test.file_path .. ":" .. test.line_number - 1
+      -- "",
+      -- "Exception: " .. test.exception.class,
+      -- "",
+      -- "Message: "
+  }
+
+  -- for line in string.gmatch(test.exception.message, "[^\r\n]+") do
+  --   table.insert(description, line)
+  -- end
+
+  vim.notify(
+    description,
+    vim.log.levels.ERROR,
+    {
+      title = "RSpec"
+    }
+  )
+end
+
 local on_exit_callback = function ()
   for _, test in pairs(state.tests) do
     local severity = vim.diagnostic.severity.ERROR
@@ -31,6 +53,10 @@ local on_exit_callback = function ()
     elseif test.status == TEST_STATES.SKIPPED then
       severity = vim.diagnostic.severity.WARN
       message = "Test Skipped"
+    end
+
+    if test.status == TEST_STATES.FAILED then
+      notify_failure(test)
     end
 
     table.insert(state.diagnostics, {
@@ -206,7 +232,7 @@ end
 
 vim.api.nvim_create_user_command("ContinuousRubyTesting", function ()
   if state.active then
-    print("Continuous ruby testing is already active..")
+    vim.notify("ContinuousRubyTesting is already active", vim.log.levels.INFO)
     return
   end
 
