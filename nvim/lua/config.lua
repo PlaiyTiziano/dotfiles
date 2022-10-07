@@ -14,19 +14,9 @@ require('continuous-testing')
 -- LSP's
 require('nvim-lsp')
 
--- Setup certain plugins
-require('nvim-autopairs').setup{}
-
-require('hop').setup()
-
-require('bufferline').setup()
-
--- require('indent_blankline').setup({
---   show_end_of_line = false
--- })
-
--- require('telescope').load_extension('harpoon')
-
--- require("packer").startup(function(use)
---   use 'wbthomason/packer.nvim'
--- end)
+-- Custom plugins
+require("continuous-testing").setup({
+  test_command = {
+    ruby_rspec = "execute_api_command 'bundle exec spring rspec %file --format json --no-fail-fast'"
+  }
+})

@@ -19,20 +19,22 @@ return require('packer').startup(
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
-    use 'windwp/nvim-autopairs'
-    use 'folke/tokyonight.nvim'
+    use {
+      'windwp/nvim-autopairs',
+      config = function ()
+        require('nvim-autopairs').setup({})
+      end
+    }
 
     -- themes
     use 'tamton-aquib/staline.nvim'
     use 'Shatur/neovim-ayu'
+    use 'catppuccin/nvim'
 
     -- Dashboard
     use {
       'goolord/alpha-nvim',
       requires = { 'kyazdani42/nvim-web-devicons' },
-      -- config = function ()
-      --   require'alpha'.setup(require'alpha.themes.startify'.config)
-      -- end
     }
 
     -- Git related
@@ -51,7 +53,7 @@ return require('packer').startup(
     -- snippets
     use 'SirVer/ultisnips'
 
-    -- highlighting
+    -- treesitter
     use 'nvim-treesitter/nvim-treesitter'
     use 'RRethy/nvim-treesitter-endwise'
 
@@ -69,30 +71,35 @@ return require('packer').startup(
     use {
       'akinsho/bufferline.nvim',
       tag = "v2.*",
-      requires = 'kyazdani42/nvim-web-devicons'
+      requires = 'kyazdani42/nvim-web-devicons',
+      config = function () require('bufferline').setup({}) end
     }
     use {
       'nvim-telescope/telescope.nvim',
       requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
     }
-    use 'phaazon/hop.nvim'
+    use {
+      'phaazon/hop.nvim',
+      config = function () require('hop').setup({}) end
+    }
 
     -- replacing
     use 'tpope/vim-abolish'
 
     -- auto-completion
-    -- use 'jiangmiao/auto-pairs'
-    use 'mattn/emmet-vim'
     use 'tpope/vim-surround'
-    use 'ervandew/supertab'
+    -- use 'ervandew/supertab'
 
     -- comments
-    -- use 'kkoomen/vim-doge'
     use 'tpope/vim-commentary'
 
     -- general plugins
     use 'vijaymarupudi/nvim-fzf'
     use "lukas-reineke/indent-blankline.nvim"
+    use {
+      'nmac427/guess-indent.nvim',
+      config = function() require('guess-indent').setup({}) end,
+    }
 
     -- Notifications
     use 'rcarriga/nvim-notify'
@@ -106,6 +113,9 @@ return require('packer').startup(
     }
 
     use 'voldikss/vim-floaterm'
+
+    -- Continuous testing
+    use '~/personal/neovim-plugins/continuous-testing.nvim'
 
     -- language specific plugins
     -- go
