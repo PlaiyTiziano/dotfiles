@@ -101,3 +101,11 @@ export PATH=$PATH:/Users/plaiytiziano/.spicetify
 
 # Add dotfile scripts to PATH
 export PATH=$PATH:$HOME/dotfiles/scripts/nipro
+
+# Fzf through bash history
+zle -N fh{,}
+bindkey ^r fh
+
+fh() {
+  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+}
