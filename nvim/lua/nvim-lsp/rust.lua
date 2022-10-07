@@ -1,8 +1,9 @@
--- require'lspconfig'.rust_analyzer.setup({})
-
-local nvim_lsp = require'lspconfig'
+local keymaps = require('nvim-lsp.keymaps')
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local opts = {
+    capabilities = capabilities,
+    on_attach = keymaps.setup,
     tools = { -- rust-tools options
         autoSetHints = true,
         hover_with_actions = true,
