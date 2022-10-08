@@ -36,7 +36,8 @@ alias lg="lazygit"
 # Linting aliases (Requires: git)
 # alias lint-rubocop="$(bundle exec rubocop -A $(git diff --name-only --diff-filter=AM | grep "\.rb$"))"
 
-#Github aliases
+# Github aliases
+alias gs="git status"
 alias gd="git status -s \
  | fzf --no-sort --reverse \
  --preview 'git diff --color=always {+2} | diff-so-fancy' \

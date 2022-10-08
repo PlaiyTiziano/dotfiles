@@ -27,7 +27,11 @@ return require('packer').startup(
     }
 
     -- themes
-    use 'tamton-aquib/staline.nvim'
+    -- use 'tamton-aquib/staline.nvim'
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
     use 'Shatur/neovim-ayu'
     use 'catppuccin/nvim'
 
@@ -72,7 +76,11 @@ return require('packer').startup(
       'akinsho/bufferline.nvim',
       tag = "v2.*",
       requires = 'kyazdani42/nvim-web-devicons',
-      config = function () require('bufferline').setup({}) end
+      config = function ()
+        require('bufferline').setup {
+          highlights = require("catppuccin.groups.integrations.bufferline").get()
+        }
+      end
     }
     use {
       'nvim-telescope/telescope.nvim',
@@ -80,25 +88,37 @@ return require('packer').startup(
     }
     use {
       'phaazon/hop.nvim',
-      config = function () require('hop').setup({}) end
+      config = function ()
+        require('hop').setup({})
+      end
     }
 
-    -- replacing
-    use 'tpope/vim-abolish'
+    -- Commenting
+    use {
+      'numToStr/Comment.nvim',
+      config = function()
+        require('Comment').setup()
+      end
+    }
 
-    -- auto-completion
-    use 'tpope/vim-surround'
-    -- use 'ervandew/supertab'
-
-    -- comments
-    use 'tpope/vim-commentary'
+    use {
+      "kylechui/nvim-surround",
+      tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+      config = function()
+        require("nvim-surround").setup({
+          -- Configuration here, or leave empty to use defaults
+        })
+      end
+    }
 
     -- general plugins
     use 'vijaymarupudi/nvim-fzf'
     use "lukas-reineke/indent-blankline.nvim"
     use {
       'nmac427/guess-indent.nvim',
-      config = function() require('guess-indent').setup({}) end,
+      config = function()
+        require('guess-indent').setup({})
+      end
     }
 
     -- Notifications

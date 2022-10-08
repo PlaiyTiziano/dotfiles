@@ -1,6 +1,7 @@
 -- Dashboard
 -- require'alpha'.setup(require'alpha.themes.startify'.config)
 require('style.dashboard')
+require('style.statusline')
 
 -- Theme
 -- local ayu = require('ayu')
