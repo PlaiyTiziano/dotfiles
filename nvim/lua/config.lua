@@ -1,23 +1,23 @@
-require('plugins')
-require('opts')
-require('style')
+require("plugins")
+require("opts")
+require("style")
 
-require('binds')
-require('treesitter')
+require("binds")
+require("treesitter")
 
-require('telescope-config')
-require('harpoon-config')
+require("telescope-config")
+require("harpoon-config")
 
-require('continuous-testing')
+require("continuous-testing")
 
 -- LSP's
-require('nvim-lsp')
+require("nvim-lsp")
 
 -- Custom plugins
 require("continuous-testing").setup({
-  notify = true,
-  ruby = {
-    test_tool = "rspec",
-    test_cmd = "execute_api_command 'bundle exec spring rspec %file --format json --no-fail-fast'"
-  }
+    notify = true,
+    ruby = {
+        test_tool = "rspec",
+        test_cmd = "execute_api_command 'bundle exec spring rspec %file --format json --no-fail-fast'",
+    },
 })

@@ -51,9 +51,14 @@ map("n", "<leader>n", ":NvimTreeToggle<CR>", options)
 -- hopword
 map("n", "<leader>hw", ":HopWord<CR>", options)
 
-
 -- Some more random stuff
-map("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float(nil, { focus = false, border = \"single\" })<CR>", options)
+map(
+    "n",
+    "<leader>e",
+    '<cmd>lua vim.diagnostic.open_float(nil, { focus = false, border = "single" })<CR>',
+    options
+)
 map("n", "<leader>tt", "<cmd>TroubleToggle<CR>", options)
+map("n", "<leader>fjson", ":%!jq .<CR>", options)
 
 map("v", "r", "_dP", {})

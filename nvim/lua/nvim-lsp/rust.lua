@@ -1,5 +1,7 @@
-local keymaps = require('nvim-lsp.keymaps')
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local keymaps = require("nvim-lsp.keymaps")
+local capabilities = require("cmp_nvim_lsp").update_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+)
 
 local opts = {
     capabilities = capabilities,
@@ -26,11 +28,11 @@ local opts = {
             ["rust-analyzer"] = {
                 -- enable clippy on save
                 checkOnSave = {
-                    command = "clippy"
+                    command = "clippy",
                 },
-            }
-        }
+            },
+        },
     },
 }
 
-require('rust-tools').setup(opts)
+require("rust-tools").setup(opts)
