@@ -30,6 +30,9 @@ vim.wo.wrap = true
 -- vim.o.expandtab = true
 -- vim.bo.expandtab = true
 
+-- DISABLE THE FUCKING MOUSE
+vim.o.mouse = ""
+
 vim.g.mapleader = " "
 vim.b.mapleader = " "
 
