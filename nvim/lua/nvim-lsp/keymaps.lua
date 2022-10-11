@@ -72,7 +72,7 @@ M.setup = function(client, bufnr)
     buf_set_keymap(
         "n",
         "<space>f",
-        "<cmd>lua vim.lsp.buf.formatting()<CR>",
+        "<cmd>lua vim.lsp.buf.format({ async = true })<CR>",
         opts
     )
 end

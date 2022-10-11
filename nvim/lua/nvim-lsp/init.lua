@@ -68,6 +68,6 @@ local patterns = {
 vim.api.nvim_create_autocmd("BufWritePost", {
     pattern = patterns,
     callback = function()
-        vim.lsp.buf.formatting()
+        vim.lsp.buf.format({ async = true })
     end,
 })
