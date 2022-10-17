@@ -22,6 +22,7 @@ dashboard.section.buttons.val = {
     dashboard.button("t", "  Find Text", ":Telescope live_grep<CR>"),
     dashboard.button("c", "  Configuration", ":e $MYVIMRC<CR>"),
     dashboard.button("u", "  Update Plugins", ":PackerSync<CR>"),
+    dashboard.button("p", "🪐  Planets?", ":Telescope planets<CR>"),
     dashboard.button("q", "  Quit Neovim", ":qa!<CR>"),
 }
 

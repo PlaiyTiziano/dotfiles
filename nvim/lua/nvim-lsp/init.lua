@@ -5,7 +5,7 @@ require("nvim-lsp.nvim-cmp")
 local lspconfig = require("lspconfig")
 
 local keymaps = require("nvim-lsp.keymaps")
-local capabilities = require("cmp_nvim_lsp").update_capabilities(
+local capabilities = require("cmp_nvim_lsp").default_capabilities(
     vim.lsp.protocol.make_client_capabilities()
 )
 
@@ -15,6 +15,7 @@ local servers = {
     "pyright",
     "rust_analyzer",
     "solargraph",
+    "eslint",
     "gopls",
 }
 for _, lsp in ipairs(servers) do
@@ -31,8 +32,9 @@ end
 lspconfig.tsserver.setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
+        client.server_capabilities.documentFormattingProvider = false
+
         keymaps.setup(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
     end,
     flags = {
         debounce_text_changes = 150,
@@ -47,7 +49,7 @@ local null_ls = require("null-ls")
 null_ls.setup({
     sources = {
         null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.eslint,
+        null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.jq,
     },
 })
@@ -60,7 +62,7 @@ local patterns = {
     "*.jsx",
     "*.lua",
     "*.go",
-    "*.md",
+    -- "*.md",
     "*.json",
 }
 
