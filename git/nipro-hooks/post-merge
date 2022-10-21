@@ -1,0 +1,5 @@
+#!/bin/bash
+exec < /dev/tty
+
+execute_api_command bundle
+execute_api_command "rails db:migrate"
