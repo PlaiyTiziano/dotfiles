@@ -89,6 +89,17 @@ return require("packer").startup(function(use)
         requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
     })
     use({
+        "princejoogie/dir-telescope.nvim",
+        -- telescope.nvim is a required dependency
+        requires = { "nvim-telescope/telescope.nvim" },
+        config = function()
+            require("dir-telescope").setup({
+                hidden = true,
+                respect_gitignore = true,
+            })
+        end,
+    })
+    use({
         "phaazon/hop.nvim",
         config = function()
             require("hop").setup({})

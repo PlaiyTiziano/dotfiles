@@ -81,6 +81,7 @@ export PATH="/Users/plaiytiziano/.gem/ruby/3.1.0/bin:$PATH"
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
 
+# Git functions
 function rebase() {
   current_branch=$(git rev-parse --abbrev-ref HEAD)
 
@@ -88,6 +89,10 @@ function rebase() {
   git pull
   git checkout "$current_branch"
   git rebase "$1"
+}
+
+function remove_merged_branches() {
+  git branch -vv | grep ': gone]' | grep -v '\*' | awk '{ print $1; }' | xargs -r git branch -D
 }
 
 # Prompt
@@ -110,3 +115,5 @@ bindkey ^r fh
 fh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
 }
+
+export PATH="$PATH:$HOME/.mint/bin"
