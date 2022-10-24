@@ -1,14 +1,28 @@
 #! /bin/sh
 
-DOCKER_COMPOSE_LOCATION="$HOME/nipro/nephroflow-api"
+DOCKER_COMPOSE_FILE="$HOME/nipro/nephroflow-api/docker-compose.yml"
 CONTAINER_NAME="nephroflow_web"
-COMMAND=$1
+
+INTERACTIVE=false
+
+while getopts it:q: flag
+do
+    case "${flag}" in
+        it) INTERACTIVE=true;;
+    esac
+done
+
 
 CONTAINER_ID="$(docker ps -q -f name=$CONTAINER_NAME -f status=running)"
 
 if [ ! $CONTAINER_ID ]; then
-    cd $DOCKER_COMPOSE_LOCATION
-    docker-compose run --service-ports web $COMMAND
+  docker-compose -f $DOCKER_COMPOSE_FILE run --service-ports -d web
+fi
+
+CONTAINER_ID="$(docker ps -q -f name=$CONTAINER_NAME -f status=running)"
+
+if $INTERACTIVE; then
+  docker exec -it $CONTAINER_ID $2
 else
-  docker exec $CONTAINER_ID $COMMAND
+  docker exec $CONTAINER_ID $1
 fi
