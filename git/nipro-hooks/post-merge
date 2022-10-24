@@ -2,4 +2,11 @@
 exec < /dev/tty
 
 execute_api_command bundle
-execute_api_command "rails db:migrate"
+
+if git diff-tree -r --name-only --no-commit-id HEAD@{1} HEAD | grep -q Gemfile; then
+    execute_api_command bundle
+fi
+
+if git diff-tree -r --name-only --no-commit-id HEAD@{1} HEAD | grep -q db/migrate; then
+    execute_api_command "rails db:migrate"
+fi
