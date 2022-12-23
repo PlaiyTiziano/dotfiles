@@ -43,6 +43,7 @@ alias gd="git status -s \
  --preview 'git diff --color=always {+2} | diff-so-fancy' \
  --bind=ctrl-j:preview-down --bind=ctrl-k:preview-up \
  --preview-window=right:60%:wrap"
+alias master="git co master"
 
 # export for brew
 export LANG='en_US.UTF-8'
@@ -117,3 +118,5 @@ fh() {
 }
 
 export PATH="$PATH:$HOME/.mint/bin"
+
+export PATH="~$PATH:$HOME/.local/share/bob/v0.8.1/nvim-macos/bin"
