@@ -50,8 +50,8 @@ require("nvim-tree").setup({
             custom_only = false,
             list = {},
         },
-        number = false,
-        relativenumber = false,
+        number = true,
+        relativenumber = true,
         signcolumn = "yes",
     },
     trash = {
@@ -91,5 +91,8 @@ require("nvim-tree").setup({
             config = false,
             git = false,
         },
+    },
+    notify = {
+        threshold = vim.log.levels.WARN,
     },
 })

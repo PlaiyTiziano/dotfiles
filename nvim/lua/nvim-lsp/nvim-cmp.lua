@@ -22,7 +22,7 @@ cmp.setup({
             c = cmp.mapping.close(),
         }),
         -- ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        ["<CR>"] = function(fallback)
+        ["<Tab>"] = function(fallback)
             if cmp.visible() then
                 cmp.confirm({ select = true })
             else

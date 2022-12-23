@@ -24,13 +24,20 @@ return require("packer").startup(function(use)
             require("nvim-autopairs").setup({})
         end,
     })
-    use("jose-elias-alvarez/null-ls.nvim")
+    -- use("jose-elias-alvarez/null-ls.nvim")
+
+    use({
+        "nvim-tree/nvim-web-devicons",
+        config = function()
+            require("nvim-web-devicons").setup({})
+        end,
+    })
 
     -- themes
     -- use 'tamton-aquib/staline.nvim'
     use({
         "nvim-lualine/lualine.nvim",
-        requires = { "kyazdani42/nvim-web-devicons", opt = true },
+        requires = { "nvim-tree/nvim-web-devicons", opt = true },
     })
     use("Shatur/neovim-ayu")
     use("catppuccin/nvim")
@@ -38,7 +45,7 @@ return require("packer").startup(function(use)
     -- Dashboard
     use({
         "goolord/alpha-nvim",
-        requires = { "kyazdani42/nvim-web-devicons" },
+        requires = { "nvim-tree/nvim-web-devicons" },
     })
 
     -- Git related
@@ -64,9 +71,9 @@ return require("packer").startup(function(use)
     -- file-navigation
     use("ThePrimeagen/harpoon")
     use({
-        "kyazdani42/nvim-tree.lua",
+        "nvim-tree/nvim-tree.lua",
         requires = {
-            "kyazdani42/nvim-web-devicons", -- optional, for file icon
+            "nvim-tree/nvim-web-devicons", -- optional, for file icon
         },
         config = function()
             require("nvim-tree-conf")
@@ -75,9 +82,26 @@ return require("packer").startup(function(use)
     use({
         "akinsho/bufferline.nvim",
         tag = "v2.*",
-        requires = "kyazdani42/nvim-web-devicons",
+        requires = "nvim-tree/nvim-web-devicons",
         config = function()
             require("bufferline").setup({
+                options = {
+                    -- diagnostics = "nvim_lsp",
+                    -- diagnostics_indicator = function(_count, _level, diagnostics_dict)
+                    --     local s = " "
+                    --     for e, n in pairs(diagnostics_dict) do
+                    --         local sym = e == "error" and " "
+                    --             or (e == "warning" and " " or "")
+                    --         s = s .. " " .. n .. " " .. sym
+                    --     end
+                    --     return s
+                    -- end,
+                    -- diagnostics_indicator = function(count, level)
+                    --     local icon = level:match("error") and " " or " "
+                    --     return " " .. icon .. count
+                    -- end,
+                    separator_style = "slant",
+                },
                 highlights = require(
                     "catppuccin.groups.integrations.bufferline"
                 ).get(),
@@ -139,7 +163,7 @@ return require("packer").startup(function(use)
 
     use({
         "folke/trouble.nvim",
-        requires = { "kyazdani42/nvim-web-devicons" },
+        requires = { "nvim-tree/nvim-web-devicons" },
         config = function()
             require("trouble").setup({
                 icons = false,

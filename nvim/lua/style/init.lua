@@ -4,10 +4,10 @@ require("style.dashboard")
 require("style.statusline")
 
 -- Theme
--- local ayu = require('ayu')
+-- local ayu = require("ayu")
 -- ayu.setup({
---   mirage = true,
---   overrides = {},
+--     mirage = true,
+--     overrides = {},
 -- })
 -- ayu.colorscheme()
 
