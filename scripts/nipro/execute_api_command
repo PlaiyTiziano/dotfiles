@@ -5,10 +5,9 @@ CONTAINER_NAME="nephroflow_web"
 
 INTERACTIVE=false
 
-while getopts it:q: flag
-do
-    case "${flag}" in
-        it) INTERACTIVE=true;;
+while getopts 'i:' FLAG; do
+    case "$FLAG" in
+        i) INTERACTIVE=true;;
     esac
 done
 
@@ -21,7 +20,7 @@ fi
 
 CONTAINER_ID="$(docker ps -q -f name=$CONTAINER_NAME -f status=running)"
 
-if $INTERACTIVE; then
+if [ $INTERACTIVE = true ]; then
   docker exec -it $CONTAINER_ID $2
 else
   docker exec $CONTAINER_ID $1
