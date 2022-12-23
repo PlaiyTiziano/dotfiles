@@ -109,6 +109,17 @@ require("lazy").setup({
     -- Language specific
     -- Rust
     "simrat39/rust-tools.nvim",
+
     -- Lua
     "ckipp01/stylua-nvim",
+
+    -- Custom plugins
+    {
+        "aaronhallaert/continuous-testing.nvim",
+        dev = true
+    },
+}, {
+    dev = {
+        path = "~/personal/neovim-plugins",
+    },
 })
