@@ -45,26 +45,24 @@ lspconfig.tsserver.setup({
 vim.g["go_def_mode"] = "gopls"
 vim.g["go_info_mode"] = "gopls"
 
-local null_ls = require("null-ls")
-null_ls.setup({
-    sources = {
-        null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.prettier,
-        null_ls.builtins.formatting.jq,
-    },
-})
-
 local patterns = {
     "*.rb",
     "*.js",
     "*.ts",
     "*.tsx",
     "*.jsx",
-    "*.lua",
     "*.go",
     -- "*.md",
     "*.json",
 }
+
+-- Format lua files
+vim.api.nvim_create_autocmd("BufWritePost", {
+    pattern = "*.lua",
+    callback = function()
+        require("stylua-nvim").format_file()
+    end,
+})
 
 -- Format file after writing it
 vim.api.nvim_create_autocmd("BufWritePost", {
