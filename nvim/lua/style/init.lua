@@ -1,5 +1,4 @@
 -- Dashboard
--- require'alpha'.setup(require'alpha.themes.startify'.config)
 require("style.dashboard")
 require("style.statusline")
 
@@ -11,9 +10,8 @@ require("style.statusline")
 -- })
 -- ayu.colorscheme()
 
-vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-require("catppuccin").setup()
-vim.api.nvim_command("colorscheme catppuccin")
+vim.cmd[[colorscheme tokyonight-moon]]
+
 
 -- Notifications style
 vim.notify = require("notify")

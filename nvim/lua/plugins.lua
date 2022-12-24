@@ -14,6 +14,7 @@ require("lazy").setup({
     -- Cosmetic
     "Shatur/neovim-ayu",
     "catppuccin/nvim",
+    "folke/tokyonight.nvim",
     {
         "nvim-tree/nvim-web-devicons",
         config = true,
@@ -47,6 +48,10 @@ require("lazy").setup({
     "voldikss/vim-floaterm",
     {
         "kylechui/nvim-surround",
+        config = true,
+    },
+    {
+        "folke/which-key.nvim",
         config = true,
     },
 
@@ -116,7 +121,7 @@ require("lazy").setup({
     -- Custom plugins
     {
         "aaronhallaert/continuous-testing.nvim",
-        dev = true
+        dev = true,
     },
 }, {
     dev = {
