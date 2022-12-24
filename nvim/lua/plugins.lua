@@ -32,6 +32,8 @@ require("lazy").setup({
     "rcarriga/nvim-notify",
     "vijaymarupudi/nvim-fzf",
     "lukas-reineke/indent-blankline.nvim",
+    "voldikss/vim-floaterm",
+    "mrjones2014/legendary.nvim",
     {
         "nmac427/guess-indent.nvim",
         config = true,
@@ -45,13 +47,16 @@ require("lazy").setup({
             })
         end,
     },
-    "voldikss/vim-floaterm",
     {
         "kylechui/nvim-surround",
         config = true,
     },
     {
         "folke/which-key.nvim",
+        config = true,
+    },
+    {
+        "numToStr/Comment.nvim",
         config = true,
     },
 
