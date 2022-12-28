@@ -130,7 +130,7 @@ font:
     style: Oblique
 
   bold_italic:
-    family: DejaVuSansMono Nerf Font
+    family: DejaVuSansMono Nerd Font
     style: Bold Oblique
 
   # Point size

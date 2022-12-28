@@ -1,10 +1,10 @@
-require("nvim-lsp.rust")
-require("nvim-lsp.lua_config")
-require("nvim-lsp.nvim-cmp")
+require("config.lsps.rust")
+require("config.lsps.lua_config")
+require("config.lsps.nvim-cmp")
 
 local lspconfig = require("lspconfig")
 
-local keymaps = require("nvim-lsp.keymaps")
+local keymaps = require("config.lsps.keymaps")
 local capabilities = require("cmp_nvim_lsp").default_capabilities(
     vim.lsp.protocol.make_client_capabilities()
 )

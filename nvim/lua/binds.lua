@@ -1,4 +1,4 @@
-local legendary_config = {
+return {
     keymaps = {
         -- Defaults
         {
@@ -8,17 +8,13 @@ local legendary_config = {
         },
         {
             "<leader>bd",
-            ":bd!",
+            ":bd!<CR>",
             description = "Closes a buffer with a bang!",
         },
         {
             "<leader>e",
             '<cmd>lua vim.diagnostic.open_float(nil, { focus = false, border = "single" })<CR>',
             description = "Open an error window",
-        },
-        {
-            "r",
-            "_dP"
         },
 
         -- Window management
@@ -123,7 +119,50 @@ local legendary_config = {
             ":%jq.<CR>",
             description = "JSON format the current file",
         },
+
+        -- Harpoon
+        {
+            "<leader>hm",
+            ":lua require('harpoon.mark').add_file()<CR>",
+            description = "Mark a file with harpoon",
+        },
+        {
+            "<leader>ht",
+            ":lua require('harpoon.mark').toggle_file()<CR>",
+            description = "Toggle mark a file with harpoon",
+        },
+
+        {
+            "<leader>gn",
+            ":lua require('harpoon.ui').nav_next()<CR>",
+            description = "Go to the next marked file",
+        },
+        {
+            "<leader>gp",
+            ":lua require('harpoon.ui').nav_prev()<CR>",
+            description = "Go to the previous marked file",
+        },
+
+        -- Telescope
+        {
+            "<leader>fg",
+            ":Telescope live_grep<CR>",
+            description = "Grep in all files",
+        },
+        {
+            "<leader>fb",
+            ":Telescope buffers<CR>",
+            description = "Search for a specific buffer",
+        },
+        {
+            "<leader>fm",
+            ":Telescope harpoon marks<CR>",
+            description = "Search for a specific marked file",
+        },
+        {
+            "<C-p>",
+            ":Telescope find_files<CR>",
+            description = "Search for a specific file",
+        },
     },
 }
-
-require("legendary").setup(legendary_config)

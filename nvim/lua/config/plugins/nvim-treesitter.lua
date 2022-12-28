@@ -1,4 +1,8 @@
-require("nvim-treesitter.configs").setup({
+return {
+    {
+        "nvim-treesitter/nvim-treesitter",
+	config = function ()
+		require("nvim-treesitter.configs").setup({
     -- One of "all", "maintained" (parsers with maintainers), or a list of languages
     ensure_installed = { "lua", "ruby" },
 
@@ -25,4 +29,9 @@ require("nvim-treesitter.configs").setup({
     endwise = { enable = true },
 
     require_install_from_grammer = true,
-})
+		})
+	end
+    },
+
+    "RRethy/nvim-treesitter-endwise",
+}

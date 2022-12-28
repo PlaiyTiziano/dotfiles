@@ -1,41 +1,3 @@
-require("harpoon").setup({})
-
-local options = { noremap = true }
-
--- Marks
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>hm",
-    ":lua require('harpoon.mark').add_file()<CR>",
-    options
-)
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>ht",
-    ":lua require('harpoon.mark').toggle_file()<CR>",
-    options
-)
-
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>gn",
-    ":lua require('harpoon.ui').nav_next()<CR>",
-    options
-)
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>gp",
-    ":lua require('harpoon.ui').nav_prev()<CR>",
-    options
-)
-
-vim.api.nvim_set_keymap(
-    "n",
-    "<C-h>",
-    ":lua require('harpoon.ui').toggle_quick_menu()<CR>",
-    options
-)
-
 function _G.Get_test_cmd( --[[optional]]line)
     local test_file = vim.fn.expand("%")
     local line_number = vim.api.nvim_win_get_cursor(0)[1]
@@ -59,7 +21,8 @@ function _G.Go_to_term(term_id)
     require("harpoon.term").gotoTerminal(term_id)
 end
 
--- Nipro testing
+-- Because this is very specific to my working environment I am not placing
+-- these in the binds.lua file.
 vim.api.nvim_set_keymap(
     "n",
     "<leader>testf",

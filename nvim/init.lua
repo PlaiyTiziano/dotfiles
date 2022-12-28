@@ -8,20 +8,11 @@ vim.g.maplocalleader = " "
 
 vim.o.ignorecase = true
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "--single-branch",
-        "https://github.com/folke/lazy.nvim.git",
-        lazypath,
-    })
-end
-vim.opt.runtimepath:prepend(lazypath)
+require("config.lazy")
+require("config.lsps")
 
-require("config")
+require("opts")
+require("style")
 
 -- Ultisnips dir
 vim.g.UltiSnipsSnippetsDir = "~/.config/nvim/ultisnips"
