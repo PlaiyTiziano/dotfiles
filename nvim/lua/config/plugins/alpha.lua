@@ -10,19 +10,25 @@ local header = {
 }
 
 local footer = function()
+    local lazy_stats = require("lazy").stats()
+
     local version = " "
         .. vim.version().major
         .. "."
         .. vim.version().minor
         .. "."
         .. vim.version().patch
-    if packer_plugins == nil then
+    if lazy_stats == nil then
         return version
     else
-        local total_plugins = "   "
-            .. #vim.tbl_keys(packer_plugins)
-            .. " Plugins"
-        return version .. total_plugins
+        return version
+            .. " Lazy 鈴"
+            .. lazy_stats.count
+            .. "("
+            .. lazy_stats.loaded
+            .. ")"
+        -- .. " 🚀 "
+        -- .. lazy_stats.startuptime
     end
 end
 

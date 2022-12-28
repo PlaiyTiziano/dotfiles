@@ -2,10 +2,11 @@ return {
     "rcarriga/nvim-notify",
     "lukas-reineke/indent-blankline.nvim",
     "voldikss/vim-floaterm",
-    {
-        "nmac427/guess-indent.nvim",
-        config = true,
-    },
+    { "nmac427/guess-indent.nvim", config = true },
+    { "kylechui/nvim-surround", config = true },
+    { "folke/which-key.nvim", config = true },
+    { "numToStr/Comment.nvim", config = true },
+    { "simrat39/symbols-outline.nvim", config = true },
     {
         "folke/trouble.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -14,18 +15,6 @@ return {
                 icons = false,
             })
         end,
-    },
-    {
-        "kylechui/nvim-surround",
-        config = true,
-    },
-    {
-        "folke/which-key.nvim",
-        config = true,
-    },
-    {
-        "numToStr/Comment.nvim",
-        config = true,
     },
 
     -- Git
