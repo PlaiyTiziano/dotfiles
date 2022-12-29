@@ -119,4 +119,4 @@ fh() {
 
 export PATH="$PATH:$HOME/.mint/bin"
 
-export PATH="~$PATH:$HOME/.local/share/bob/v0.8.1/nvim-macos/bin"
+export PATH="~$PATH:$HOME/.local/share/bob/v0.8.2/nvim-macos/bin"
