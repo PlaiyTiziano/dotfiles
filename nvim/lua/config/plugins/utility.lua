@@ -29,9 +29,6 @@ return {
     },
     "almo7aya/openingh.nvim",
 
-    -- Snippets
-    "SirVer/ultisnips",
-
     -- Language specific
     -- Rust
     "simrat39/rust-tools.nvim",

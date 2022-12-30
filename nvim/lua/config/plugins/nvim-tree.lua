@@ -2,9 +2,8 @@ return {
     {
         "nvim-tree/nvim-tree.lua",
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = function ()
-        	require("nvim-tree").setup(
-            {
+        config = function()
+            require("nvim-tree").setup({
                 disable_netrw = false,
                 hijack_netrw = true,
                 open_on_setup = false,
@@ -100,8 +99,7 @@ return {
                 notify = {
                     threshold = vim.log.levels.WARN,
                 },
-            }
-            )
+            })
         end,
     },
 }

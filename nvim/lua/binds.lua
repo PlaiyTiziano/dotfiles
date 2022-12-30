@@ -116,7 +116,7 @@ return {
         -- Formatting
         {
             "<leader>fjson",
-            ":%jq.<CR>",
+            ":%!jq<CR>",
             description = "JSON format the current file",
         },
 

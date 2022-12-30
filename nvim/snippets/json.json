@@ -1,0 +1,28 @@
+{
+  "A JSON schema": {
+    "prefix": "schema",
+    "body": [
+      "{",
+      "\t\"type\": \"${1:}\"",
+      "\t\"required\": [${2:}]",
+      "\t\"properties\": {${0:}}",
+      "\t\"additionalProperties\": false",
+      "}"
+    ],
+    "description": "A JSON schema"
+  },
+  "A JSON schema reference": {
+    "prefix": "reference",
+    "body": [
+      "\"${1:}\": { \"$ref\": \"${0:}\"}"
+    ],
+    "description": "a JSON schema reference"
+  },
+  "A JSON schema property": {
+    "prefix": "property",
+    "body": [
+      "\"${1:}\": { \"type\": \"${0:}\"}"
+    ],
+    "description": "a JSON schema property"
+  }
+}
