@@ -1,5 +1,6 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
+local lspkind = require("lspkind")
 
 local has_words_before = function()
     unpack = unpack or table.unpack
@@ -13,6 +14,14 @@ local has_words_before = function()
 end
 
 cmp.setup({
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = "symbol_text",
+            preset = "codicons",
+            maxwidth = 50,
+            ellipsis_char = "...",
+        }),
+    },
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)

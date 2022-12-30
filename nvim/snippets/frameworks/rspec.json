@@ -1,0 +1,29 @@
+{
+  "An RSpec test case": {
+    "prefix": "test",
+    "body": [
+      "it \"${1:}\" do",
+      "\t${0:}",
+      "end"
+    ],
+    "description": "rspec test case"
+  },
+  "An RSpec describe block": {
+    "prefix": "describe",
+    "body": [
+      "describe \"${1:}\" do",
+      "\t${0:}",
+      "end"
+    ],
+    "description": "rspec describe block"
+  },
+  "An RSpec context block": {
+    "prefix": "context",
+    "body": [
+      "context \"${1:}\" do",
+      "\t${0:}",
+      "end"
+    ],
+    "description": "rspec context block"
+  }
+}
