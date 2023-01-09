@@ -10,7 +10,11 @@ return {
                 sync_install = false,
 
                 -- List of parsers to ignore installing
-                ignore_install = { "lua" },
+                ignore_install = {},
+
+                indent = {
+                    enable = true,
+                },
 
                 highlight = {
                     -- `false` will disable the whole extension

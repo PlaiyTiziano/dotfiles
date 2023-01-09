@@ -10,6 +10,7 @@ vim.o.ignorecase = true
 
 require("config.lazy")
 require("config.lsps")
+require("config.nipro")
 
 require("opts")
 require("style")

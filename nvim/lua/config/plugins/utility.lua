@@ -2,6 +2,7 @@ return {
     "rcarriga/nvim-notify",
     "lukas-reineke/indent-blankline.nvim",
     "voldikss/vim-floaterm",
+    "shortcuts/no-neck-pain.nvim",
     { "nmac427/guess-indent.nvim", config = true },
     { "kylechui/nvim-surround", config = true },
     { "folke/which-key.nvim", config = true },

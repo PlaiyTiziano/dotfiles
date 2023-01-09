@@ -29,7 +29,13 @@ return {
         config = function()
             local telescope = require("telescope")
 
-            telescope.setup({})
+            telescope.setup({
+                pickers = {
+                    colorscheme = {
+                        enable_preview = true
+                    }
+                }
+            })
             telescope.load_extension("harpoon")
         end,
     },
