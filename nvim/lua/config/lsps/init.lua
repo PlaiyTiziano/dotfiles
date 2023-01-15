@@ -58,7 +58,7 @@ local patterns = {
 }
 
 -- Format lua files
-vim.api.nvim_create_autocmd("BufWritePost", {
+vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*.lua",
     callback = function()
         require("stylua-nvim").format_file()
@@ -66,7 +66,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 })
 
 -- Format file after writing it
-vim.api.nvim_create_autocmd("BufWritePost", {
+vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = patterns,
     callback = function()
         vim.lsp.buf.format({ async = true })

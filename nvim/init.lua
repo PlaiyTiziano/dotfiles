@@ -1,7 +1,7 @@
 vim.g.winwidth = 80
 vim.g.autowriteall = true
 vim.g.smartcase = true
-vim.g.noswapfile = true
+vim.g.swapfile = false
 vim.g.syntax = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

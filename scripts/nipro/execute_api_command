@@ -21,7 +21,12 @@ fi
 CONTAINER_ID="$(docker ps -q -f name=$CONTAINER_NAME -f status=running)"
 
 if [ $INTERACTIVE = true ]; then
-  docker exec -it $CONTAINER_ID $2
+  # docker exec -it $CONTAINER_ID $2
+  if [ -t 1 ] ; then
+    docker exec -it $CONTAINER_ID $2;
+  else
+    docker exec -i $CONTAINER_ID $2;
+  fi
 else
   docker exec $CONTAINER_ID $1
 fi
