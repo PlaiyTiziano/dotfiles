@@ -19,17 +19,6 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.wrap = false
 
--- vim.o.tabstop = 2
--- vim.bo.tabstop = 2
--- vim.o.softtabstop = 2
--- vim.bo.softtabstop = 2
--- vim.o.shiftwidth = 2
--- vim.bo.shiftwidth = 2
--- vim.o.autoindent = true
--- vim.bo.autoindent = true
--- vim.o.expandtab = true
--- vim.bo.expandtab = true
-
 -- DISABLE THE FUCKING MOUSE
 vim.o.mouse = ""
 
