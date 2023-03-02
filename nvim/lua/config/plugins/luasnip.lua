@@ -4,7 +4,7 @@ local M = {
     "L3MON4D3/LuaSnip",
     version = "v1.1.0",
     dependencies = {
-        -- "rafamadriz/friendly-snippets",
+        "rafamadriz/friendly-snippets",
         "saadparwaiz1/cmp_luasnip",
     },
     lazy = true,

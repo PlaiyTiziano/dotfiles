@@ -2,9 +2,21 @@ return {
     "rcarriga/nvim-notify",
     "lukas-reineke/indent-blankline.nvim",
     "voldikss/vim-floaterm",
-    "shortcuts/no-neck-pain.nvim",
+    {
+        "echasnovski/mini.surround",
+        version = "*",
+        config = function()
+            require("mini.surround").setup()
+        end,
+    },
+    {
+        "echasnovski/mini.ai",
+        version = "*",
+        config = function()
+            require("mini.ai").setup()
+        end,
+    },
     { "nmac427/guess-indent.nvim", config = true },
-    { "kylechui/nvim-surround", config = true },
     { "folke/which-key.nvim", config = true },
     { "numToStr/Comment.nvim", config = true },
     { "simrat39/symbols-outline.nvim", config = true },
