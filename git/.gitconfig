@@ -7,7 +7,7 @@ email = tiziano.plaiy@gmail.com
   aa = add --all
   co = checkout
   cob = checkout -b
-  pf = push --force
+  pf = push --force-with-lease
   ca = commit --amend
 
   ri = rebase -i
