@@ -7,7 +7,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities(
     vim.lsp.protocol.make_client_capabilities()
 )
 
-require("lspconfig").sumneko_lua.setup({
+require("lspconfig").lua_ls.setup({
     capabilities = capabilities,
     on_attach = keymaps.setup,
     settings = {
@@ -32,7 +32,7 @@ require("lspconfig").sumneko_lua.setup({
             },
             format = {
                 enable = false,
-            }
+            },
         },
     },
 })
