@@ -14,6 +14,22 @@
       {
         "language": "rspec",
         "path": "./frameworks/rspec.json"
+      },
+      {
+        "language": "qualitydesk",
+        "path": "./qualitydesk/reports.json"
+      },
+      {
+        "language": "qualitydesk",
+        "path": "./qualitydesk/requirement.json"
+      },
+      {
+        "language": "qualitydesk",
+        "path": "./qualitydesk/risk.json"
+      },
+      {
+        "language": "qualitydesk",
+        "path": "./qualitydesk/testcase.json"
       }
     ]
   }

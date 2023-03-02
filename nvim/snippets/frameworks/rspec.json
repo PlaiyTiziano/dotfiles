@@ -1,4 +1,11 @@
 {
+  "Breakpoint": {
+    "prefix": "break",
+    "body": [
+      "binding.break"
+    ],
+    "description": "Set a breakpoint"
+  },
   "An RSpec test case": {
     "prefix": "test",
     "body": [
