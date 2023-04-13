@@ -16,6 +16,8 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 TERMINAL="alacritty"
 TERMINAL_CONFIG_FILE="alacritty.yml"
 
+alias nvim="nvim --listen /tmp/`tmux display-message -p '#S-#{window_index}-#I'`"
+
 # config aliases
 alias zshconfig="nvim ~/dotfiles/zsh/.zshrc"
 alias nvimconfig="nvim ~/dotfiles/nvim/"
@@ -119,4 +121,4 @@ fh() {
 
 export PATH="$PATH:$HOME/.mint/bin"
 
-export PATH="~$PATH:$HOME/.local/share/bob/v0.8.2/nvim-macos/bin"
+export PATH="$PATH:$HOME/.local/share/bob/v0.9.0/nvim-macos/bin"
