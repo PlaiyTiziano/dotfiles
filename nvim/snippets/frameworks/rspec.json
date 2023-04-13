@@ -32,5 +32,9 @@
       "end"
     ],
     "description": "rspec context block"
+  },
+  "Expect equals": {
+    "prefix": "exeq",
+    "body": "expect(${1:}).to eq ${0:}"
   }
 }

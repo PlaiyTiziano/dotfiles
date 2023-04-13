@@ -25,7 +25,7 @@ end
 function M.config()
     -- Figure out a way to lazy load the loaders
     vim.api.nvim_create_autocmd("BufEnter", {
-        pattern = { "*.rb", "*.lua" },
+        pattern = { "*.rb", "*.lua", "*.md" },
         callback = start_vscode_loaders,
         group = vim.api.nvim_create_augroup(LAZY_LUASNIP_AUGROUP, {}),
     })
@@ -34,6 +34,7 @@ function M.config()
 
     ls.filetype_extend("json", { "json" })
     ls.filetype_extend("ruby", { "rails", "rspec" })
+    ls.filetype_extend("markdown", { "qualitydesk" })
     ls.config.setup({
         history = true,
         enable_autosnippets = true,
