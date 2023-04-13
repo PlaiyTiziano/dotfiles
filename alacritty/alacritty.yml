@@ -671,9 +671,9 @@ font:
 import:
   # - ~/dotfiles/alacritty/themes/catppuccin/catppuccin-frappe.yml
   # - ~/dotfiles/alacritty/themes/catppuccin/catppuccin-latte.yml
-  # - ~/dotfiles/alacritty/themes/catppuccin/catppuccin-macchiato.yml
+  - ~/dotfiles/alacritty/themes/catppuccin/catppuccin-macchiato.yml
   # - ~/dotfiles/alacritty/themes/catppuccin/catppuccin-mocha.yml
   # - ~/dotfiles/alacritty/themes/tokyonight_moon.yml
   # - ~/.local/share/nvim/lazy/tokyonight.nvim/extras/alacritty/tokyonight_moon.yml
   # - ~/dotfiles/alacritty/themes/ayu-mirage.yml
-  - ~/dotfiles/alacritty/themes/monokai-pro-octagon.yml
+  # - ~/dotfiles/alacritty/themes/monokai-pro-octagon.yml

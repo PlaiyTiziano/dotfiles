@@ -1,5 +1,4 @@
 return {
-    "vijaymarupudi/nvim-fzf",
     { "ThePrimeagen/harpoon", config = true },
     { "phaazon/hop.nvim", config = true },
     {
@@ -28,15 +27,48 @@ return {
         dependencies = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" },
         config = function()
             local telescope = require("telescope")
+            local actions = require("telescope.actions")
 
             telescope.setup({
+                defaults = {
+                    mappings = {
+                        i = {
+                            ["<c-e>"] = function(prompt_bufnr)
+                                actions.select_default(prompt_bufnr)
+                                require("telescope.builtin").resume()
+                            end,
+                            ["<c-s>"] = actions.send_selected_to_qflist
+                                + actions.open_qflist,
+                            ["<c-a>"] = actions.add_selected_to_qflist
+                                + actions.open_qflist,
+                        },
+                        n = {
+                            ["<c-e>"] = function(prompt_bufnr)
+                                actions.select_default(prompt_bufnr)
+                                require("telescope.builtin").resume()
+                            end,
+                            ["<c-s>"] = actions.send_selected_to_qflist
+                                + actions.open_qflist,
+                            ["<c-a>"] = actions.add_selected_to_qflist
+                                + actions.open_qflist,
+                        },
+                    },
+                },
                 pickers = {
                     colorscheme = {
-                        enable_preview = true
-                    }
-                }
+                        enable_preview = true,
+                    },
+                },
+                extensions = {
+                    advanced_git_search = {
+                        diff_plugin = "fugitive",
+                        git_flags = {},
+                        git_diff_flags = {},
+                    },
+                },
             })
             telescope.load_extension("harpoon")
+            telescope.load_extension("advanced_git_search")
         end,
     },
 }

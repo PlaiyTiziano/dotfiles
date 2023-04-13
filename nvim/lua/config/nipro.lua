@@ -18,13 +18,13 @@ end
 vim.api.nvim_set_keymap(
     "n",
     "<leader>testf",
-    ":lua require('FTerm').scratch({ cmd = '' .. Connect_to_nipro_web_container(Get_test_cmd()) })<CR>",
+    ":lua require('FTerm').run({ Connect_to_nipro_web_container(Get_test_cmd()) })<CR>",
     { noremap = true }
 )
 
 vim.api.nvim_set_keymap(
     "n",
     "<leader>testl",
-    ":lua require('FTerm').scratch({ cmd = '' .. Connect_to_nipro_web_container(Get_test_cmd(true)) })<CR>",
+    ":lua require('FTerm').run({ Connect_to_nipro_web_container(Get_test_cmd(true)) })<CR>",
     { noremap = true }
 )

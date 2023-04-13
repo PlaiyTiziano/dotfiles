@@ -80,6 +80,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # Ruby
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH="/Users/plaiytiziano/.gem/ruby/3.1.0/bin:$PATH"
+export PATH="/Users/plaiytiziano/.rbenv/ruby/3.2.0/bin:$PATH"
 
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search

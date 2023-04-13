@@ -15,7 +15,5 @@ require("config.nipro")
 require("opts")
 require("style")
 
--- Ultisnips dir
-vim.g.UltiSnipsSnippetsDir = "~/.config/nvim/ultisnips"
-
 vim.api.nvim_set_keymap("v", "r", "_dP", {})
+-- vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])

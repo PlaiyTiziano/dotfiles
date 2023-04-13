@@ -14,14 +14,14 @@
   "A JSON schema reference": {
     "prefix": "reference",
     "body": [
-      "\"${1:}\": { \"$ref\": \"${0:}\"}"
+      "\"${1:}\": { \"$ref\": \"${0:} \"}"
     ],
     "description": "a JSON schema reference"
   },
   "A JSON schema property": {
     "prefix": "property",
     "body": [
-      "\"${1:}\": { \"type\": \"${0:}\"}"
+      "\"${1:}\": { \"type\": \"${0:} \"}"
     ],
     "description": "a JSON schema property"
   }

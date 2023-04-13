@@ -1,6 +1,8 @@
 return {
     "neovim/nvim-lspconfig",
 
+    "folke/neodev.nvim", -- Neovim development helper
+
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",

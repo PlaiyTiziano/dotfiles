@@ -21,9 +21,15 @@ email = tiziano.plaiy@gmail.com
   cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
 
   last = log -1 HEAD
+
+[merge]
+  conflictStyle = diff3
+
 [init]
 	defaultBranch = main
+
 [fetch]
 	prune = true
+
 [core]
 	excludesfile = /Users/plaiytiziano/.gitignore
