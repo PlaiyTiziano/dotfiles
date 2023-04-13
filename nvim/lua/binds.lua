@@ -103,13 +103,8 @@ return {
 
         -- FloaTerms
         {
-            "<leader>lg",
-            ":FloatermNew --height=0.90 --width=0.90 lazygit<CR>",
-            description = "LazyGit",
-        },
-        {
             "<C-t>",
-            ":FloatermToggle<CR>",
+            ":lua require('FTerm').toggle()<CR>",
             description = "Toggle a Floating Terminal",
         },
 

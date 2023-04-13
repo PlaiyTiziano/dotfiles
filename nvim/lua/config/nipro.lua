@@ -13,26 +13,18 @@ function _G.Connect_to_nipro_web_container(test_cmd)
     return "execute_api_command -it '" .. test_cmd .. "'"
 end
 
-function _G.Send_cmd(term_id, cmd)
-    require("harpoon.term").sendCommand(term_id, cmd)
-end
-
-function _G.Go_to_term(term_id)
-    require("harpoon.term").gotoTerminal(term_id)
-end
-
 -- Because this is very specific to my working environment I am not placing
 -- these in the binds.lua file.
 vim.api.nvim_set_keymap(
     "n",
     "<leader>testf",
-    ":lua Send_cmd(1, Connect_to_nipro_web_container(Get_test_cmd()))<CR>:lua Go_to_term(1)<CR>i<CR><C-\\><C-n>",
+    ":lua require('FTerm').scratch({ cmd = '' .. Connect_to_nipro_web_container(Get_test_cmd()) })<CR>",
     { noremap = true }
 )
 
 vim.api.nvim_set_keymap(
     "n",
     "<leader>testl",
-    ":lua Send_cmd(1, Connect_to_nipro_web_container(Get_test_cmd(true)))<CR>:lua Go_to_term(1)<CR>i<CR><C-\\><C-n>",
+    ":lua require('FTerm').scratch({ cmd = '' .. Connect_to_nipro_web_container(Get_test_cmd(true)) })<CR>",
     { noremap = true }
 )
