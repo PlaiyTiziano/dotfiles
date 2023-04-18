@@ -14,6 +14,6 @@ return {
             },
             project_override = {},
         },
-        event = "VeryLazy"
+        event = "VeryLazy",
     },
 }

@@ -4,7 +4,9 @@ return {
     {
         "echasnovski/mini.surround",
         version = "*",
-        config = function() require("mini.surround").setup() end,
+        config = function()
+            require("mini.surround").setup()
+        end,
     },
     {
         "echasnovski/mini.ai",
@@ -17,7 +19,7 @@ return {
         "Wansmer/treesj",
         dependencies = { "nvim-treesitter" },
         config = true,
-        event = "VeryLazy"
+        event = "VeryLazy",
     },
     { "nmac427/guess-indent.nvim", config = true },
     { "folke/which-key.nvim", config = true },
@@ -28,20 +30,35 @@ return {
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = true,
         opts = {
-            icons = false
+            icons = false,
         },
-        event = "VeryLazy"
+        event = "VeryLazy",
     },
 
     -- Git
-    { "almo7aya/openingh.nvim", dev = true },
     {
         "lewis6991/gitsigns.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = true,
-        event = "VeryLazy"
+        event = "VeryLazy",
     },
     {
+        "ruifm/gitlinker.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("gitlinker").setup({
+                opts = {
+                    add_current_line_on_normal_mode = false,
+                    action_callback = function(url)
+                        require("gitlinker.actions").copy_to_clipboard(url)
+                        require("gitlinker.actions").open_in_browser(url)
+                    end,
+                },
+            })
+        end,
+    },
+    {
+
         "sindrets/diffview.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
     },
@@ -55,7 +72,7 @@ return {
             -- (fugitive is still needed to open in browser)
             -- "sindrets/diffview.nvim",
         },
-        event = "VeryLazy"
+        event = "VeryLazy",
     },
 
     -- Language specific

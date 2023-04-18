@@ -18,7 +18,7 @@ return {
             hidden = true,
             respect_gitignore = true,
         },
-        event = "VeryLazy"
+        event = "VeryLazy",
     },
     {
         "nvim-telescope/telescope.nvim",
