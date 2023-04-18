@@ -1,7 +1,7 @@
 return {
-    "Shatur/neovim-ayu",
-    "catppuccin/nvim",
-    "folke/tokyonight.nvim",
+    { "Shatur/neovim-ayu", event = "VeryLazy" },
+    { "catppuccin/nvim" },
+    { "folke/tokyonight.nvim", event = "VeryLazy" },
     {
         "utilyre/barbecue.nvim",
         name = "barbecue",
@@ -11,6 +11,7 @@ return {
             "SmiteshP/nvim-navic",
             "nvim-tree/nvim-web-devicons",
         },
+        event = "VeryLazy",
     },
     {
         "nvim-tree/nvim-web-devicons",
@@ -19,13 +20,13 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = function()
-            require("lualine").setup({
-                options = {
-                    theme = "catppuccin",
-                },
-            })
-        end,
+        config = true,
+        opts = {
+            options = {
+                theme = "catppuccin",
+            },
+        },
+        event = "VeryLazy",
     },
     {
         "echasnovski/mini.animate",

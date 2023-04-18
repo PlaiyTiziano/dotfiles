@@ -1,30 +1,29 @@
 return {
     { "ThePrimeagen/harpoon", config = true },
-    { "phaazon/hop.nvim", config = true },
+    { "phaazon/hop.nvim", config = true, event = "VeryLazy" },
     {
         "akinsho/bufferline.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = function()
-            require("bufferline").setup({
-                highlights = require(
-                    "catppuccin.groups.integrations.bufferline"
-                ).get(),
-            })
-        end,
+        config = true,
+        opts = {
+            highlights = require("catppuccin.groups.integrations.bufferline").get(),
+        },
+        event = "VeryLazy",
     },
     {
         "princejoogie/dir-telescope.nvim",
         dependencies = { "nvim-telescope/telescope.nvim" },
-        config = function()
-            require("dir-telescope").setup({
-                hidden = true,
-                respect_gitignore = true,
-            })
-        end,
+        config = true,
+        opts = {
+            hidden = true,
+            respect_gitignore = true,
+        },
+        event = "VeryLazy"
     },
     {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" },
+        event = "VeryLazy",
         config = function()
             local telescope = require("telescope")
             local actions = require("telescope.actions")

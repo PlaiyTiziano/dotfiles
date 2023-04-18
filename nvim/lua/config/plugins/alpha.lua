@@ -50,7 +50,9 @@ return {
                     ":Telescope colorscheme<CR>"
                 ),
                 dashboard.button(
-                    "p", "Ꭾ" .. " Planets", ":Telescope planets<CR>"
+                    "p",
+                    "Ꭾ" .. " Planets",
+                    ":Telescope planets<CR>"
                 ),
                 dashboard.button("l", "鈴" .. " Lazy", ":Lazy<CR>"),
                 dashboard.button("q", " " .. " Quit", ":qa<CR>"),

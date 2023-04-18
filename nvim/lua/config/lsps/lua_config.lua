@@ -7,7 +7,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities(
     vim.lsp.protocol.make_client_capabilities()
 )
 
-require('neodev').setup()
+require("neodev").setup()
 
 require("lspconfig").lua_ls.setup({
     capabilities = capabilities,
