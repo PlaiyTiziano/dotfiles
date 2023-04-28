@@ -16,7 +16,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 TERMINAL="alacritty"
 TERMINAL_CONFIG_FILE="alacritty.yml"
 
-alias nvim="nvim --listen /tmp/`tmux display-message -p '#S-#{window_index}-#I'`"
+alias nvim="nvim --listen /tmp/$(tmux display-message -p '#S-#{window_index}-#I')"
 
 # config aliases
 alias zshconfig="nvim ~/dotfiles/zsh/.zshrc"
@@ -80,7 +80,9 @@ export PATH="$HOME/.local/bin:$PATH"
 # Ruby
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH="/Users/plaiytiziano/.gem/ruby/3.1.0/bin:$PATH"
-export PATH="/Users/plaiytiziano/.rbenv/ruby/3.2.0/bin:$PATH"
+export PATH="$PATH:$HOME/.rbenv/shims"
+# export PATH="/Users/plaiytiziano/.rbenv/ruby/3.2.0/bin:$PATH"
+# export PATH="/Users/plaiytiziano/.rbenv/ruby/3.2.2/bin:$PATH"
 
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
@@ -123,3 +125,11 @@ fh() {
 export PATH="$PATH:$HOME/.mint/bin"
 
 export PATH="$PATH:$HOME/.local/share/bob/v0.9.0/nvim-macos/bin"
+
+# pnpm
+export PNPM_HOME="/Users/plaiytiziano/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

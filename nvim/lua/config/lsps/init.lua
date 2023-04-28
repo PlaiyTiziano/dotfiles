@@ -13,7 +13,6 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities(
 -- map buffer local keybindings when the language server attaches
 local servers = {
     "pyright",
-    "rust_analyzer",
     "solargraph",
     "eslint",
     "gopls",
@@ -28,6 +27,26 @@ for _, lsp in ipairs(servers) do
         },
     })
 end
+
+-- rust_analyzer
+lspconfig["rust_analyzer"].setup({
+    capabilities = capabilities,
+    on_attach = keymaps.setup,
+    flags = {
+        debounce_text_changes = 150,
+    },
+    checkOnSave = {
+        allFeatures = true,
+        overrideCommand = {
+            "cargo",
+            "clippy",
+            "--workspace",
+            "--message-format=json",
+            "--all-targets",
+            "--all-features",
+        },
+    },
+})
 
 -- TSServer
 lspconfig.tsserver.setup({
@@ -54,7 +73,7 @@ local patterns = {
     "*.jsx",
     "*.go",
     -- "*.md",
-    "*.json",
+    -- "*.json",
 }
 
 -- Format lua files

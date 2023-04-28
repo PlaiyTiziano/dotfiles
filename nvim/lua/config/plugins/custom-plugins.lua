@@ -1,7 +1,7 @@
 return {
     {
         "aaronhallaert/continuous-testing.nvim",
-        -- dev = true,
+        dev = true,
         config = true,
         opts = {
             notify = true,
