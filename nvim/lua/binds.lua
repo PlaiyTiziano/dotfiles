@@ -61,8 +61,8 @@ return {
         -- NvimTree
         {
             "<leader>n",
-            ":NvimTreeToggle<CR>",
-            description = "Toggle NvimTree",
+            ":Neotree toggle<CR>",
+            description = "Toggle NeoTree",
         },
 
         -- HopWord
@@ -111,7 +111,7 @@ return {
         -- Formatting
         {
             "<leader>fjson",
-            ":%!jq<CR>",
+            ":%!prettier --stdin-filepath %<CR>",
             description = "JSON format the current file",
         },
 
