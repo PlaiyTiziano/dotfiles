@@ -6,6 +6,7 @@ path+=/usr/bin
 path+=/usr/sbin
 path+=/sbin
 path+="$HOME/.local/bin"
+path+="$HOME/.yarn/bin"
 
 path+=/opt/homebrew/opt/libpq/bin
 path+="$HOME/.local/share/bob/v0.9.0/nvim-macos/bin"
