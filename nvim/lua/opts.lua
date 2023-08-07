@@ -3,7 +3,6 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.ignorecase = true
 vim.o.hlsearch = true
--- vim.o.background = 'dark'
 vim.o.termguicolors = true
 vim.o.lazyredraw = true
 

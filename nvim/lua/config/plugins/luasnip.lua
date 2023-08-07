@@ -7,7 +7,6 @@ local M = {
         "rafamadriz/friendly-snippets",
         "saadparwaiz1/cmp_luasnip",
     },
-    lazy = true,
     event = "BufEnter",
 }
 

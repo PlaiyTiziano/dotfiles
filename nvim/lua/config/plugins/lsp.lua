@@ -1,5 +1,8 @@
 return {
-    "neovim/nvim-lspconfig",
+    {
+        "neovim/nvim-lspconfig",
+        event = "VeryLazy",
+    },
 
     "folke/neodev.nvim", -- Neovim development helper
 

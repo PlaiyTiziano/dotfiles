@@ -1,6 +1,7 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
+        event = "VeryLazy",
         config = function()
             require("nvim-treesitter.configs").setup({
                 -- One of "all", "maintained" (parsers with maintainers), or a list of languages
@@ -37,5 +38,5 @@ return {
         end,
     },
 
-    "RRethy/nvim-treesitter-endwise",
+    { "RRethy/nvim-treesitter-endwise", event = "VeryLazy" },
 }

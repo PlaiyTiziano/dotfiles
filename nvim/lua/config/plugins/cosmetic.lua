@@ -1,20 +1,8 @@
 return {
-    { "Shatur/neovim-ayu", event = "VeryLazy" },
     { "catppuccin/nvim" },
-    { "folke/tokyonight.nvim", event = "VeryLazy" },
-    {
-        "utilyre/barbecue.nvim",
-        name = "barbecue",
-        version = "*",
-        -- config = true,
-        dependencies = {
-            "SmiteshP/nvim-navic",
-            "nvim-tree/nvim-web-devicons",
-        },
-        event = "VeryLazy",
-    },
     {
         "nvim-tree/nvim-web-devicons",
+        event = "VeryLazy",
         config = true,
     },
     {
