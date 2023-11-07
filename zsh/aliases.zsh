@@ -3,8 +3,8 @@ alias cat="bat"
 alias lg="lazygit"
 alias ld="lazydocker"
 
-TERMINAL="alacritty"
-TERMINAL_CONFIG_FILE="alacritty.yml"
+TERMINAL="wezterm"
+TERMINAL_CONFIG_FILE=".wezterm.lua"
 alias termconfig="nvim $HOME/dotfiles/$TERMINAL/$TERMINAL_CONFIG_FILE"
 
 alias zshconfig="nvim $HOME/dotfiles/zsh/.zshrc"
