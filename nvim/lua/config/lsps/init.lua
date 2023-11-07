@@ -61,6 +61,9 @@ lspconfig.tsserver.setup({
     },
 })
 
+lspconfig.emmet_ls.setup({})
+lspconfig.svelte.setup({})
+
 -- Golang specific
 vim.g["go_def_mode"] = "gopls"
 vim.g["go_info_mode"] = "gopls"
@@ -77,17 +80,23 @@ local patterns = {
 }
 
 -- Format lua files
-vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = "*.lua",
-    callback = function()
-        require("stylua-nvim").format_file()
-    end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--     pattern = "*.lua",
+--     callback = function()
+--         require("stylua-nvim").format_file()
+--     end,
+-- })
+
+-- Format json files
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--     pattern = "*.json",
+--     command = [[ %!prettier --stdin-filepath %]],
+-- })
 
 -- Format file after writing it
-vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = patterns,
-    callback = function()
-        vim.lsp.buf.format({ async = true })
-    end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--     pattern = patterns,
+--     callback = function()
+--         vim.lsp.buf.format({ async = true })
+--     end,
+-- })

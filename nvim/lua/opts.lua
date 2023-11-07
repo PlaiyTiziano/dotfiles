@@ -14,6 +14,10 @@ vim.o.completeopt = "menuone,noinsert,noselect"
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.showmode = false
 
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.wrap = false
@@ -26,7 +30,7 @@ vim.b.mapleader = " "
 
 vim.api.nvim_command("set colorcolumn=80")
 
-vim.cmd("language en_US.utf-8")
+-- vim.cmd("language en_US.utf-8")
 vim.opt.listchars = {
     tab = "┆·",
     trail = "·",

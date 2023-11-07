@@ -41,20 +41,15 @@ return {
                 dashboard.button("c", " " .. " Config", ":e $MYVIMRC <CR>"),
                 dashboard.button(
                     "s",
-                    "󰑓" .. " Restore Session",
+                    "󰑓" .. "  Restore Session",
                     [[:lua require("persistence").load() <cr>]]
                 ),
                 dashboard.button(
                     "t",
-                    "♠" .. " Themes",
+                    "♠" .. "  Themes",
                     ":Telescope colorscheme<CR>"
                 ),
-                dashboard.button(
-                    "p",
-                    "Ꭾ" .. " Planets",
-                    ":Telescope planets<CR>"
-                ),
-                dashboard.button("l", "󰒲" .. " Lazy", ":Lazy<CR>"),
+                dashboard.button("l", "󰒲" .. "  Lazy", ":Lazy<CR>"),
                 dashboard.button("q", " " .. " Quit", ":qa<CR>"),
             }
 

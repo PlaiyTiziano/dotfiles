@@ -1,6 +1,12 @@
 return {
     "rcarriga/nvim-notify",
-    "lukas-reineke/indent-blankline.nvim",
+    "iamcco/markdown-preview.nvim",
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = { scope = { enabled = false } },
+        config = true,
+    },
     {
         "echasnovski/mini.surround",
         version = "*",
