@@ -39,16 +39,11 @@ return {
                     ":Telescope live_grep <CR>"
                 ),
                 dashboard.button("c", " " .. " Config", ":e $MYVIMRC <CR>"),
-                dashboard.button(
-                    "s",
-                    "󰑓" .. "  Restore Session",
-                    [[:lua require("persistence").load() <cr>]]
-                ),
-                dashboard.button(
-                    "t",
-                    "♠" .. "  Themes",
-                    ":Telescope colorscheme<CR>"
-                ),
+                -- dashboard.button(
+                --     "s",
+                --     "󰑓" .. "  Restore Session",
+                --     [[:lua require("persistence").load() <cr>]]
+                -- ),
                 dashboard.button("l", "󰒲" .. "  Lazy", ":Lazy<CR>"),
                 dashboard.button("q", " " .. " Quit", ":qa<CR>"),
             }

@@ -6,6 +6,7 @@ return {
         main = "ibl",
         opts = { scope = { enabled = false } },
         config = true,
+        event = "VeryLazy",
     },
     {
         "echasnovski/mini.surround",
@@ -62,6 +63,7 @@ return {
                 },
             })
         end,
+        event = "VeryLazy",
     },
     {
 
