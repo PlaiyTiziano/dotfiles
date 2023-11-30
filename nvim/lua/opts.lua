@@ -22,6 +22,11 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.wrap = false
 
+-- Folding
+vim.o.foldlevel = 20
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+
 -- DISABLE THE FUCKING MOUSE
 vim.o.mouse = ""
 
