@@ -8,8 +8,9 @@ end
 
 config.color_scheme = "Catppuccin Macchiato"
 
-config.font = wezterm.font("DejaVuSansM Nerd Font")
-config.font_size = 14
+config.font = wezterm.font("Monaspace Neon Var", { weight = "Bold" })
+config.harfbuzz_features = { "dlig=1" }
+config.font_size = 15
 
 config.enable_tab_bar = false
 
