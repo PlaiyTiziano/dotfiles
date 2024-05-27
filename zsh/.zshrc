@@ -19,6 +19,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/dotfiles/zsh/exports.zsh
 source $HOME/dotfiles/zsh/binds.zsh
 source $HOME/dotfiles/zsh/aliases.zsh
+source $HOME/dotfiles/zsh/copilot.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
