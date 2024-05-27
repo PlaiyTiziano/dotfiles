@@ -3,9 +3,9 @@
     "prefix": "schema",
     "body": [
       "{",
-      "\t\"type\": \"${1:}\"",
-      "\t\"required\": [${2:}]",
-      "\t\"properties\": {${0:}}",
+      "\t\"type\": \"${1:}\",",
+      "\t\"required\": [${2:}],",
+      "\t\"properties\": {${0:}},",
       "\t\"additionalProperties\": false",
       "}"
     ],
