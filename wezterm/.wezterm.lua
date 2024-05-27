@@ -9,9 +9,9 @@ end
 config.color_scheme = "Catppuccin Macchiato"
 
 config.font = wezterm.font("Monaspace Neon Var", { weight = "Bold" })
-config.harfbuzz_features = { "dlig=1" }
-config.font_size = 15
+config.font_size = 16
 
 config.enable_tab_bar = false
+config.window_decorations = "RESIZE"
 
 return config
