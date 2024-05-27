@@ -10,7 +10,7 @@ plugins=(
 eval $(/opt/homebrew/bin/brew shellenv)
 
 # Starship prompt
-eval $(starship init zsh)
+eval "$(starship init zsh)"
 
 source $HOME/dotfiles/zsh/.env
 source $ZSH/oh-my-zsh.sh
