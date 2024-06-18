@@ -1,4 +1,4 @@
-alias nvim="nvim --listen /tmp/$(tmux display-message -p '#S-#{window_index}-#I')"
+#alias nvim="nvim --listen /tmp/$(tmux display-message -p '#S-#{window_index}-#I')"
 alias cat="bat"
 alias lg="lazygit"
 alias ld="lazydocker"
