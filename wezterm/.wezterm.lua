@@ -8,7 +8,7 @@ end
 
 config.color_scheme = "Catppuccin Macchiato"
 
-config.font = wezterm.font("Monaspace Neon Var", { weight = "Bold" })
+config.font = wezterm.font("MonaspiceNe Nerd Font")
 config.font_size = 16
 
 config.enable_tab_bar = false
