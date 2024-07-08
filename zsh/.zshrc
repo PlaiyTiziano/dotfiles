@@ -22,6 +22,9 @@ esac
 # Starship prompt
 eval "$(starship init zsh)"
 
+# Zoxide
+eval "$(zoxide init zsh)"
+
 source $HOME/dotfiles/zsh/.env
 source $ZSH/oh-my-zsh.sh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -30,6 +33,7 @@ source $HOME/dotfiles/zsh/exports.zsh
 source $HOME/dotfiles/zsh/binds.zsh
 source $HOME/dotfiles/zsh/aliases.zsh
 source $HOME/dotfiles/zsh/copilot.zsh
+source $HOME/dotfiles/zsh/zoxide.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
