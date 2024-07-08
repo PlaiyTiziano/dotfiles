@@ -8,7 +8,7 @@ end
 
 config.color_scheme = "Catppuccin Macchiato"
 
-config.font = wezterm.font("MonaspiceNe Nerd Font")
+config.font = wezterm.font("MonaspiceNe Nerd Font", { weight = "Regular" })
 config.font_size = 16
 
 config.enable_tab_bar = false
