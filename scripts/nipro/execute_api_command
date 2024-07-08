@@ -1,6 +1,6 @@
 #! /bin/sh
 
-DOCKER_COMPOSE_FILE="$HOME/nipro/nephroflow-api/docker-compose.yml"
+DOCKER_COMPOSE_FILE="$HOME/nipro/nephroflow-api/compose.yml"
 CONTAINER_NAME="nephroflow-web"
 
 INTERACTIVE=false
