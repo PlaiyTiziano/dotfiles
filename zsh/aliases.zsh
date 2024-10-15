@@ -6,6 +6,9 @@ alias cat="bat"
 alias lg="lazygit"
 alias ld="lazydocker"
 
+alias bs="battery status"
+alias bm="battery maintain"
+
 TERMINAL="wezterm"
 TERMINAL_CONFIG_FILE=".wezterm.lua"
 alias termconfig="nvim $HOME/dotfiles/$TERMINAL/$TERMINAL_CONFIG_FILE"
@@ -21,3 +24,6 @@ alias gd="git status -s \
  --preview 'git diff --color=always {+2} | diff-so-fancy' \
  --bind=ctrl-j:preview-down --bind=ctrl-k:preview-up \
  --preview-window=right:60%:wrap"
+
+alias keti="kubectl exec -it"
+alias kl="kubectl logs"

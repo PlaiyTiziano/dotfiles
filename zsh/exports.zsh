@@ -20,6 +20,11 @@ dirs_to_add=(
     "usr/sbin"
     "/sbin"
     "$HOME/.local/bin"
+    "$HOME/.yarn/bin"
+
+    # Work laptop related import stuff to keep things working
+    "$HOME/.local/share/bob/nvim-bin"
+    "/opt/homebrew/opt/libpq/bin"
 
     # Dotfile scripts
     "$HOME/dotfiles/scripts/nipro"
@@ -56,7 +61,7 @@ done
 # path+="$HOME/.local/share/bob/nvim-bin"
 
 # Dotfile scripts
-path+=$HOME/dotfiles/scripts/nipro
+# path+=$HOME/dotfiles/scripts/nipro
 
 # pnpm (yarn equivalent)
 # export PNPM_HOME="$HOME/Library/pnpm"
@@ -79,3 +84,4 @@ path+=$HOME/dotfiles/scripts/nipro
 # NephroFlow
 export BUNDLER_USERNAME=$GITHUB_USERNAME
 export BUNDLER_TOKEN=$GITHUB_ACCESS_TOKEN
+export NPM_TOKEN=$GITHUB_ACCESS_TOKEN
