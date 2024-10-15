@@ -33,6 +33,7 @@ source $HOME/dotfiles/zsh/exports.zsh
 source $HOME/dotfiles/zsh/binds.zsh
 source $HOME/dotfiles/zsh/aliases.zsh
 source $HOME/dotfiles/zsh/copilot.zsh
+source $HOME/dotfiles/zsh/weather.zsh
 source $HOME/dotfiles/zsh/zoxide.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
