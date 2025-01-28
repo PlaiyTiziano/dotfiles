@@ -15,5 +15,11 @@ require("config.nipro")
 require("opts")
 require("style")
 
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    pattern = { "*.rb" },
+    callback = function()
+        vim.cmd("lcd ./")
+    end,
+})
 vim.api.nvim_set_keymap("v", "r", "_dP", {})
 -- vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
