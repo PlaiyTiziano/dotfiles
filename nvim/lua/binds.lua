@@ -6,11 +6,11 @@ return {
             ":source %<CR>",
             description = "Sources the current file",
         },
-        {
-            "<leader>bd",
-            ":bd!<CR>",
-            description = "Closes a buffer with a bang!",
-        },
+        -- {
+        --     "<leader>bd",
+        --     ":bd!<CR>",
+        --     description = "Closes a buffer with a bang!",
+        -- },
         {
             "<leader>e",
             '<cmd>lua vim.diagnostic.open_float(nil, { focus = false, border = "single" })<CR>',
@@ -58,11 +58,16 @@ return {
             description = "Toggle Trouble",
         },
 
-        -- NvimTree
+        -- Neotree
         {
             "<leader>n",
             ":Neotree toggle<CR>",
             description = "Toggle NeoTree",
+        },
+        {
+            "<leader>nr",
+            "<cmd>NeoTreeReveal<CR>",
+            description = "Reveal current file in NeoTree",
         },
 
         -- HopWord
@@ -137,27 +142,47 @@ return {
             ":lua require('harpoon.ui').nav_prev()<CR>",
             description = "Go to the previous marked file",
         },
+        {
+            "<leader>h1",
+            "<cmd>lua require('harpoon.ui').nav_file(1)<CR>",
+            description = "Go to the first mark",
+        },
+        {
+            "<leader>h2",
+            "<cmd>lua require('harpoon.ui').nav_file(2)<CR>",
+            description = "Go to the second mark",
+        },
+        {
+            "<leader>h3",
+            "<cmd>lua require('harpoon.ui').nav_file(3)<CR>",
+            description = "Go to the third mark",
+        },
+        {
+            "<leader>h4",
+            "<cmd>lua require('harpoon.ui').nav_file(4)<CR>",
+            description = "Go to the fourth mark",
+        },
 
         -- Telescope
-        {
-            "<leader>fg",
-            ":Telescope live_grep<CR>",
-            description = "Grep in all files",
-        },
-        {
-            "<leader>fb",
-            ":Telescope buffers<CR>",
-            description = "Search for a specific buffer",
-        },
-        {
-            "<leader>fm",
-            ":Telescope harpoon marks<CR>",
-            description = "Search for a specific marked file",
-        },
-        {
-            "<C-p>",
-            ":Telescope find_files<CR>",
-            description = "Search for a specific file",
-        },
+        -- {
+        --     "<leader>fg",
+        --     ":Telescope live_grep<CR>",
+        --     description = "Grep in all files",
+        -- },
+        -- {
+        --     "<leader>fb",
+        --     ":Telescope buffers<CR>",
+        --     description = "Search for a specific buffer",
+        -- },
+        -- {
+        --     "<leader>fm",
+        --     ":Telescope harpoon marks<CR>",
+        --     description = "Search for a specific marked file",
+        -- },
+        -- {
+        --     "<C-p>",
+        --     ":Telescope find_files<CR>",
+        --     description = "Search for a specific file",
+        -- },
     },
 }
