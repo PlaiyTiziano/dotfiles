@@ -1,13 +1,13 @@
 return {
     "rcarriga/nvim-notify",
     "iamcco/markdown-preview.nvim",
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        opts = { scope = { enabled = false } },
-        config = true,
-        event = "VeryLazy",
-    },
+    -- {
+    --     "lukas-reineke/indent-blankline.nvim",
+    --     main = "ibl",
+    --     opts = { scope = { enabled = false } },
+    --     config = true,
+    --     event = "VeryLazy",
+    -- },
     {
         "echasnovski/mini.surround",
         version = "*",
@@ -66,11 +66,6 @@ return {
         event = "VeryLazy",
     },
     {
-
-        "sindrets/diffview.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-    },
-    {
         "aaronhallaert/advanced-git-search.nvim",
         dependencies = {
             "nvim-telescope/telescope.nvim",
@@ -92,4 +87,7 @@ return {
 
     -- Plenary
     "nvim-lua/plenary.nvim",
+
+    -- Go
+    "fatih/vim-go",
 }
