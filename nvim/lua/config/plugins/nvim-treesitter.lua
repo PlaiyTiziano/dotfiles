@@ -39,4 +39,9 @@ return {
     },
 
     { "RRethy/nvim-treesitter-endwise", event = "VeryLazy" },
+    {
+        "windwp/nvim-ts-autotag",
+        event = "VeryLazy",
+        config = true,
+    },
 }
