@@ -13,5 +13,12 @@ config.font_size = 16
 
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
+config.window_background_opacity = 0.95
+config.window_padding = {
+    top = ".2cell",
+    right = ".2cell",
+    bottom = ".2cell",
+    left = ".2cell",
+}
 
 return config
