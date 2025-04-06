@@ -1,5 +1,6 @@
 export LANG='en_US.UTF-8'
 export ZSH=$HOME/.oh-my-zsh
+export GPG_TTY=$(tty)
 
 plugins=(
   git
