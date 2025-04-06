@@ -13,6 +13,7 @@ email = tiziano.plaiy@gmail.com
   ri = rebase -i
   rc = rebase --continue
   ra = rebase --abort
+  ro = rebase --onto
 
   cp = cherry-pick
   cpa = cherry-pick --abort
@@ -21,6 +22,9 @@ email = tiziano.plaiy@gmail.com
   cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
 
   last = log -1 HEAD
+
+[commit]
+  gpgSign = true
 
 [merge]
   conflictStyle = diff3
