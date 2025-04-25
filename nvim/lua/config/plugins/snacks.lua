@@ -16,7 +16,7 @@ return {
                 sections = {
                     {
                         section = "terminal",
-                        cmd = "chafa ~/Pictures/wallpaper.jpg --format symbols --symbols vhalf --size 60x15 --stretch; sleep .1",
+                        cmd = "chafa ~/Pictures/wallpapers/wallpaper-3.jpg --format symbols --symbols vhalf --size 60x15 --stretch; sleep .1",
                         height = 15,
                         padding = 1,
                     },

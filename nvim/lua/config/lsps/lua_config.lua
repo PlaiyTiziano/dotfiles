@@ -33,7 +33,7 @@ require("lspconfig").lua_ls.setup({
                 enable = false,
             },
             format = {
-                enable = false,
+                enable = true,
             },
         },
     },

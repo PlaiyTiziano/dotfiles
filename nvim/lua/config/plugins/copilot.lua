@@ -2,7 +2,7 @@ return {
     {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
-        event = "InsertEnter",
+        -- event = "InsertEnter",
         config = function()
             require("copilot").setup({
                 suggestion = {
@@ -24,7 +24,10 @@ return {
     {
         "zbirenbaum/copilot-cmp",
         config = function()
-            require("copilot_cmp").setup()
+            require("copilot_cmp").setup({
+                suggestion = { enabled = false },
+                panel = { enabled = false },
+            })
         end,
     },
     {

@@ -15,8 +15,9 @@ local servers = {
     "pyright",
     "solargraph",
     "eslint",
-    "gopls",
+    -- "gopls",
     "jsonls",
+    "tailwindcss",
 }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup({
@@ -49,7 +50,7 @@ lspconfig["rust_analyzer"].setup({
 })
 
 -- TSServer
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
@@ -68,35 +69,20 @@ lspconfig.svelte.setup({})
 vim.g["go_def_mode"] = "gopls"
 vim.g["go_info_mode"] = "gopls"
 
-local patterns = {
-    "*.rb",
-    "*.js",
-    "*.ts",
-    "*.tsx",
-    "*.jsx",
-    "*.go",
-    -- "*.md",
-    -- "*.json",
-}
-
--- Format lua files
--- vim.api.nvim_create_autocmd("BufWritePre", {
---     pattern = "*.lua",
---     callback = function()
---         require("stylua-nvim").format_file()
---     end,
--- })
-
--- Format json files
--- vim.api.nvim_create_autocmd("BufWritePre", {
---     pattern = "*.json",
---     command = [[ %!prettier --stdin-filepath %]],
--- })
-
--- Format file after writing it
--- vim.api.nvim_create_autocmd("BufWritePre", {
---     pattern = patterns,
---     callback = function()
---         vim.lsp.buf.format({ async = true })
---     end,
--- })
+lspconfig.gopls.setup({
+    filetypes = { "go", "gomod", "gowork", "gotmpl", "templ" },
+    capabilities = capabilities,
+    on_attach = keymaps.setup,
+    flags = {
+        debounce_text_changes = 150,
+    },
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+            },
+            staticcheck = true,
+            gofumpt = true,
+        },
+    },
+})
