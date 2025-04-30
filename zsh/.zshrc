@@ -5,6 +5,7 @@ export GPG_TTY=$(tty)
 plugins=(
   git
   docker
+  git-open
 )
 
 arch=$(uname -m)
