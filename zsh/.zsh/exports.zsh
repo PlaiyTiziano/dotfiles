@@ -4,8 +4,6 @@ export EDITOR="$VISUAL"
 # Golang
 export GOPATH=$HOME/Documents/go
 
-# Ruby (rbenv)
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 add_to_path() {
     local dir="$1"
@@ -22,8 +20,6 @@ dirs_to_add=(
     "$HOME/.local/bin"
     "$HOME/.yarn/bin"
 
-    # Work laptop related import stuff to keep things working
-    "$HOME/.local/share/bob/nvim-bin"
     "/opt/homebrew/opt/libpq/bin"
 
     # Dotfile scripts
@@ -37,49 +33,14 @@ dirs_to_add=(
 
     # Rust
     "$HOME/.cargo/bin"
-
-    # Ruby
-    "$HOME/.rbenv/shims"
-
-    # Mint
-    "$HOME/.mint/bin"
 )
 
 for dir in "${dirs_to_add[@]}"; do
     add_to_path "$dir"
 done
 
-
-# path+=/usr/local/bin
-# path+=/usr/bin
-# path+=/usr/sbin
-# path+=/sbin
-# path+="$HOME/.local/bin"
-# path+="$HOME/.yarn/bin"
-
-# path+=/opt/homebrew/opt/libpq/bin
-# path+="$HOME/.local/share/bob/nvim-bin"
-
-# Dotfile scripts
-# path+=$HOME/dotfiles/scripts/nipro
-
-# pnpm (yarn equivalent)
-# export PNPM_HOME="$HOME/Library/pnpm"
-# case ":$PATH:" in
-#   *":$PNPM_HOME:"*) ;;
-#   *) export PATH="$PNPM_HOME:$PATH" ;;
-# esac
-
-# path+="$GOPATH/bin"
-
-# Rust
-# path+="$HOME/.cargo/bin"
-
-# Ruby
-# path+="$HOME/.gem/ruby/3.3.3/bin"
-# path+="$HOME/.rbenv/shims"
-
-# path+="$HOME/.mint/bin"
+# Prioritize asdf shims
+export PATH="$HOME/.asdf/shims:$PATH"
 
 # NephroFlow
 export BUNDLER_USERNAME=$GITHUB_USERNAME
