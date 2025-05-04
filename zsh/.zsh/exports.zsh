@@ -4,7 +4,6 @@ export EDITOR="$VISUAL"
 # Golang
 export GOPATH=$HOME/Documents/go
 
-
 add_to_path() {
     local dir="$1"
     if [[ ":$PATH:" != *":$dir:"* ]]; then
@@ -26,7 +25,7 @@ dirs_to_add=(
     "$HOME/dotfiles/scripts/nipro"
 
     # PNPM
-    "$HOME/Libaray/pnpm"
+    "$HOME/Library/pnpm"
 
     # Golang
     "$GOPATH/bin"
