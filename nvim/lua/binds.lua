@@ -66,7 +66,7 @@ return {
         },
         {
             "<leader>nr",
-            "<cmd>NeoTreeReveal<CR>",
+            "<cmd>Neotree reveal<CR>",
             description = "Reveal current file in NeoTree",
         },
 
