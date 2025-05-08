@@ -63,7 +63,6 @@ lspconfig.ts_ls.setup({
 })
 
 lspconfig.emmet_ls.setup({})
-lspconfig.svelte.setup({})
 
 -- Golang specific
 vim.g["go_def_mode"] = "gopls"
