@@ -6,6 +6,7 @@ plugins=(
   git
   docker
   git-open
+  zsh-fzf-history-search
 )
 
 arch=$(uname -m)
@@ -37,8 +38,6 @@ source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/copilot.zsh
 source $HOME/.zsh/weather.zsh
 source $HOME/.zsh/zoxide.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 setopt auto_cd
 
