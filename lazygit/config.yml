@@ -3,6 +3,9 @@ gui:
 git:
   overrideGpg: true
 
+services:
+  'gitlab.catsolutions.be': 'gitlab:gitlab.catsolutions.be'
+
 theme:
   activeBorderColor:
     - '#8aadf4'
