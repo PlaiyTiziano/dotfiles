@@ -2,6 +2,7 @@
 [user]
 name = Tiziano Plaiy
 email = tiziano.plaiy@gmail.com
+signingkey = <signingkey>
 
 [alias]
   aa = add --all
@@ -26,6 +27,9 @@ email = tiziano.plaiy@gmail.com
 [commit]
   gpgSign = true
 
+[tag]
+  gpgSign = true
+
 [merge]
   conflictStyle = diff3
 
@@ -36,4 +40,4 @@ email = tiziano.plaiy@gmail.com
 	prune = true
 
 [core]
-	excludesfile = /Users/plaiytiziano/.gitignore
+	excludesfile = /Users/plaiy/.gitignore
