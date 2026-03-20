@@ -209,7 +209,8 @@ if.app-id = 'com.apple.iCal'
 run = 'move-node-to-workspace C'
 
 [[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
+# if.app-id = 'com.tinyspeck.slackmacgap'
+if.app-id = 'org.zulip.zulip-electron'
 run = 'move-node-to-workspace S'
 
 [[on-window-detected]]
@@ -239,6 +240,10 @@ run = 'move-node-to-workspace 8'
 [[on-window-detected]]
 if.app-id = 'com.apple.dt.Xcode'
 run = 'move-node-to-workspace X'
+
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = 'move-node-to-workspace W'
 
 [[on-window-detected]]
 if.app-id = 'org.jkiss.dbeaver.core.product'
