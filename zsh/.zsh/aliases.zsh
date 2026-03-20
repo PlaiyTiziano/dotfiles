@@ -27,3 +27,6 @@ alias gd="git status -s \
 
 alias keti="kubectl exec -it"
 alias kl="kubectl logs"
+
+alias dcd="docker compose down"
+alias dce="docker compose exec"
